@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language alias="en" intName="English (US)" localName="English (US)" lcid="" culture="en-US">
+  <creator>
+    <name>Jumoo</name>
+    <link>http://jumoo.uk</link>
+  </creator>
+
+  <area alias="sections">
+    <key alias="doStuffSection">Do Stuff</key>
+  </area>
+</language>

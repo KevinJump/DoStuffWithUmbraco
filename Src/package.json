@@ -1,0 +1,14 @@
+{
+  "name": "dostuffwithumbraco",
+  "version": "8.1.1",
+  "description": "Collection of things to do with umbraco",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "dashboards": [
+    {
+      "alias": "customDashboard",
+      "sections": [ "doStuffSection" ],
+      "view": "~/App_Plugins/DoStuff.Dashboard/dashboard.html",
+      "weight":  10
+    }
+
+  ]
+}
