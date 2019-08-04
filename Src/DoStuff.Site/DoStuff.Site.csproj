@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\uSync.8.1.1\build\uSync.props" Condition="Exists('..\packages\uSync.8.1.1\build\uSync.props')" />
   <Import Project="..\packages\UmbracoCms.8.1.1\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.8.1.1\build\UmbracoCms.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
@@ -393,11 +394,38 @@
     <Reference Include="Umbraco.Web.UI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Web.8.1.1\lib\net472\Umbraco.Web.UI.dll</HintPath>
     </Reference>
+    <Reference Include="uSync8.BackOffice, Version=8.1.1.72, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uSync.8.1.1\lib\net472\uSync8.BackOffice.dll</HintPath>
+    </Reference>
+    <Reference Include="uSync8.ContentEdition, Version=8.0.1.611, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uSync.ContentEdition.8.1.0\lib\net472\uSync8.ContentEdition.dll</HintPath>
+    </Reference>
+    <Reference Include="uSync8.Core, Version=8.1.1.722, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uSync.Core.8.1.1\lib\net472\uSync8.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.html" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
+    <Content Include="App_Plugins\uSync8\backoffice\uSync8\dashboard.html" />
+    <Content Include="App_Plugins\uSync8\backoffice\uSync8\uSyncDashboardController.js" />
+    <Content Include="App_Plugins\uSync8\changeDialog.html" />
+    <Content Include="App_Plugins\uSync8\changeDialogController.js" />
+    <Content Include="App_Plugins\uSync8\components\uSyncProgressView.html" />
+    <Content Include="App_Plugins\uSync8\components\usyncProgressViewComponent.js" />
+    <Content Include="App_Plugins\uSync8\components\uSyncReportView.html" />
+    <Content Include="App_Plugins\uSync8\components\uSyncReportViewComponent.js" />
+    <Content Include="App_Plugins\uSync8\lang\en-US.xml" />
+    <Content Include="App_Plugins\uSync8\settings\default.html" />
+    <Content Include="App_Plugins\uSync8\settings\expansion.html" />
+    <Content Include="App_Plugins\uSync8\settings\expansionController.js" />
+    <Content Include="App_Plugins\uSync8\settings\settings.html" />
+    <Content Include="App_Plugins\uSync8\settings\settingsController.js" />
+    <Content Include="App_Plugins\uSync8\settings\uSyncController.js" />
+    <Content Include="App_Plugins\uSync8\usync.css" />
+    <Content Include="App_Plugins\uSync8\uSyncHub.js" />
+    <Content Include="App_Plugins\uSync8\uSyncService.js" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -437,6 +465,9 @@
     <Content Include="config\HealthChecks.config" />
     <Content Include="config\ClientDependency.config" />
     <Content Include="config\BackOfficeTours\getting-started.json" />
+    <Content Include="config\uSync8.config" />
+    <Content Include="App_Plugins\uSync8\package.manifest" />
+    <Content Include="App_Plugins\uSync8\addons.json" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -498,9 +529,12 @@
     <Error Condition="!Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets'))" />
     <Error Condition="!Exists('..\packages\UmbracoCms.8.1.1\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.1.1\build\UmbracoCms.props'))" />
     <Error Condition="!Exists('..\packages\UmbracoCms.8.1.1\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.1.1\build\UmbracoCms.targets'))" />
+    <Error Condition="!Exists('..\packages\uSync.8.1.1\build\uSync.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\uSync.8.1.1\build\uSync.props'))" />
+    <Error Condition="!Exists('..\packages\uSync.8.1.1\build\uSync.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\uSync.8.1.1\build\uSync.targets'))" />
   </Target>
   <Import Project="..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />
   <Import Project="..\packages\UmbracoCms.8.1.1\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.8.1.1\build\UmbracoCms.targets')" />
+  <Import Project="..\packages\uSync.8.1.1\build\uSync.targets" Condition="Exists('..\packages\uSync.8.1.1\build\uSync.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -1,0 +1,228 @@
+﻿.usync-main {
+    flex: 1 1 auto;
+    margin-right: 20px;
+    width: calc(100% - 370px);
+}
+
+.usync-sidebar {
+    flex: 0 0 350px;
+}
+
+
+.usync-header-buttons {
+    padding: 1rem 0;
+}
+
+    .usync-header-buttons > * {
+        margin: 0.25rem 0;
+    }
+
+.usync-action-buttons {
+    margin: 0.25rem 0
+}
+
+    .usync-action-buttons > * {
+        margin-right: 0.25rem;
+    }
+
+.usync-action-message {
+    font-weight: 700;
+}
+
+.usync-detail-count {
+    padding: 6px 0;
+}
+
+.usync-item-details {
+    border-left: 4px solid #aaa;
+}
+
+    .usync-item-details .umb-table-head .umb-table-row {
+        background-color: rgba(0,0,0,0.05);
+        border-bottom: 1px solid black;
+    }
+
+    .usync-item-details .umb-table {
+        background-color: #f3f3f5;
+    }
+
+    .usync-item-details .usync-detail-action-cell {
+        flex: 0 0 110px;
+    }
+
+    .usync-item-details .usync-old-value {
+        text-decoration: line-through;
+        color: #C62828;
+    }
+
+    .usync-item-details .usync-new-value {
+        color: #2e7d32
+    }
+
+.usync-row-delete {
+    background-color: #ffebee;
+}
+
+.usync-row-create {
+    background-color: #E8F5E9;
+}
+
+.usync-handler-icon {
+    padding: 0.75em;
+    margin-right: 14px;
+    transition: all .3s ease-in;
+    position: relative;
+}
+
+    .usync-handler-icon i {
+        font-size: 40px;
+    }
+
+    .usync-handler-icon .handler-badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .usync-handler-icon .badge.type-info {
+        background-color: #fad634;
+    }
+
+    .usync-handler-icon .badge.type-complete {
+        background-color: #35c786;
+    }
+
+    .usync-handler-icon .handler-badge i {
+        font-size: 16px;
+        color: #35c786;
+    }
+
+    .usync-handler-icon .usync-handler-name {
+        font-weight: 700;
+        margin-top: 0.25em;
+    }
+
+    .usync-handler-icon.enabled {
+        color: #555 !important;
+    }
+
+
+    .usync-handler-icon.usync-pending {
+        color: #eee;
+    }
+
+    .usync-handler-icon.usync-progress {
+        color: #675e7a;
+    }
+
+    .usync-handler-icon.usync-complete {
+        color: #35c786;
+    }
+
+        .usync-handler-icon.usync-complete .usync-addon-icon {
+            color: #7b1fa2;
+        }
+
+
+.usync-settings {
+    display: flex;
+}
+
+    .usync-settings > div {
+        width: 50%;
+    }
+
+    .usync-settings .usync-main-settings {
+        margin-right: 14px;
+    }
+
+.usync-root-folder input {
+    width: 100%;
+}
+
+.usync-root-folder {
+    display: flex;
+    padding: 10px 0;
+    align-items: center;
+}
+
+    .usync-root-folder > .controls {
+        width: 100%;
+        margin: auto;
+    }
+
+    .usync-root-folder > .control-label {
+        width: auto;
+        white-space: nowrap;
+        margin-bottom: 0;
+    }
+
+.usync-not-animated .bar {
+    transition: none;
+}
+
+
+.usync-boxes {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.usync-box {
+    max-width: 100%;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.usync-box-icon {
+    font-size: 40px;
+}
+
+.usync-box .umb-box-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .usync-box .umb-box-content > * {
+        padding: 10px 0;
+    }
+
+.usync-box-nuget {
+    width: 100%;
+    text-align: left;
+}
+
+.usync-box-nuget a {
+    background-color: black;
+    display: block;
+    color: #fff;
+    font-family: monospace;
+    padding: 10px 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.usync-box-inprogress { 
+    opacity: 0.5;
+}
+
+/* umb 8.1 style things */
+.umb-permission {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+    .umb-permission > * {
+        padding-right: 10px;
+    }
+
+.umb-permission__description {
+    font-style: italic;
+    color: #444;
+    margin-top: 2px;
+}
