@@ -17,7 +17,7 @@ of a jumping off point then a complete reference.
 - [Dashboard](/Src/DoStuff.Core/App_Plugins/DoStuff.Dashboard)
 - [ContentApp](/Src/DoStuff.Core/ContentApp)
 - [HealthChecks](/Src/DoStuff.Core/HealthChecks)
-= [Background Tasks](/Src/DoStuff.Core/BackgroundTasks)
+- [Background Tasks](/Src/DoStuff.Core/BackgroundTasks)
 
 ## Project Structure
 The Project consists of two main elements 
