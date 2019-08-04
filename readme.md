@@ -7,6 +7,9 @@ this library is just a collection of things that I have needed
 to do/explain/remember while developing sites and packages for
 Umbraco, its by no means complete, but hopefully it's helpful.
 
+On the whole these are minimal implimentations of things - more
+of a jumping off point then a complete reference. 
+
 # Snippets
 - [Migrations](/Src/DoStuff.Core/Migrations)
 - [Custom Sections](/Src/DoStuff.Core/Sections)
@@ -14,8 +17,8 @@ Umbraco, its by no means complete, but hopefully it's helpful.
 - [Dashboard](/Src/DoStuff.Core/App_Plugins/DoStuff.Dashboard)
 
 
-## Structure
-The Project consists of two mail elements 
+## Project Structure
+The Project consists of two main elements 
 
 ### DoStuff.Core 
 The Core library has all the code examples in, for things

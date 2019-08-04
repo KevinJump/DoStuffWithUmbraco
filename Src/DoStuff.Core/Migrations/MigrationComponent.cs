@@ -18,7 +18,7 @@ namespace DoStuff.Core.Migrations
     public class MigrationComponentComposer : ComponentComposer<MigrationComponent>
     { }
 
-    public class MigrationComponent : IComponent
+    public class MigrationComponent
     {
         private readonly IScopeProvider scopeProvider;
         private readonly IMigrationBuilder migrationBuilder;
