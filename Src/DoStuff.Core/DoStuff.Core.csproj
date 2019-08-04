@@ -250,6 +250,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="App_Plugins\DoStuff.Dashboard\package.manifest" />
+    <None Include="Migrations\readme.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

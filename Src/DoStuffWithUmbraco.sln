@@ -9,6 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoStuff.Core", "DoStuff.Cor
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{EE28B7FB-ABE4-44FA-A9CA-E02E5F2867BC}"
 	ProjectSection(SolutionItems) = preProject
+		..\GettingStarted.md = ..\GettingStarted.md
 		gulpfile.js = gulpfile.js
 		..\readme.md = ..\readme.md
 	EndProjectSection
