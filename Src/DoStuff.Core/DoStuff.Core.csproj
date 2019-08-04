@@ -233,6 +233,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackgroundTasks\BackgroundTaskComponent.cs" />
+    <Compile Include="BackgroundTasks\CustomBackgroundTask.cs" />
     <Compile Include="ContentApp\CustomContentApp.cs" />
     <Compile Include="DoStuff.cs" />
     <Compile Include="HealthChecks\CustomHealthCheck.cs" />
@@ -254,6 +256,7 @@
     <None Include="app.config" />
     <None Include="App_Plugins\DoStuff.Dashboard\package.manifest" />
     <None Include="App_Plugins\DoStuffTree\package.manifest" />
+    <None Include="BackgroundTasks\readme.md" />
     <None Include="ContentApp\readme.md" />
     <None Include="HealthChecks\readme.md" />
     <None Include="Migrations\readme.md" />
