@@ -233,6 +233,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContentApp\CustomContentApp.cs" />
     <Compile Include="DoStuff.cs" />
     <Compile Include="Migrations\AddColumn\AddColumnMigration.cs" />
     <Compile Include="Migrations\AddIndex\AddIndexToTableMigration.cs" />
@@ -252,12 +253,14 @@
     <None Include="app.config" />
     <None Include="App_Plugins\DoStuff.Dashboard\package.manifest" />
     <None Include="App_Plugins\DoStuffTree\package.manifest" />
+    <None Include="ContentApp\readme.md" />
     <None Include="Migrations\readme.md" />
     <None Include="packages.config" />
     <None Include="Sections\readme.md" />
     <None Include="Trees\readme.md" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\DoStuff.ContentApp\ContentApp.html" />
     <Content Include="App_Plugins\DoStuff.Dashboard\dashboard.html" />
     <Content Include="App_Plugins\DoStuff.Dashboard\dashboardController.js" />
     <Content Include="App_Plugins\DoStuff.Dashboard\Lang\en-us.xml" />
