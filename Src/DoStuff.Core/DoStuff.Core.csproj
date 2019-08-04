@@ -252,6 +252,7 @@
     <None Include="App_Plugins\DoStuff.Dashboard\package.manifest" />
     <None Include="Migrations\readme.md" />
     <None Include="packages.config" />
+    <None Include="Sections\readme.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Plugins\DoStuff.Dashboard\dashboard.html" />
