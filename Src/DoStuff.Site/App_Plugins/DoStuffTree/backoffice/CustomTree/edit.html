@@ -1,0 +1,26 @@
+<div ng-controller="doStuffCustomTreeEditController as vm">
+    <umb-editor-view>
+        <umb-editor-header name="vm.page.title"
+                           description="vm.page.description"
+                           description-locked="true"
+                           name-locked="true"
+                           hide-icon="true"
+                           hide-alias="true">
+        </umb-editor-header>
+        <umb-editor-container>
+            <umb-load-indicator ng-if="vm.loading"></umb-load-indicator>
+            <div ng-if="!vm.loading">
+
+            </div>
+        </umb-editor-container>
+        <umb-editor-footer>
+            <umb-editor-footer-content-right>
+                <umb-button action="vm.save()"
+                            type="button"
+                            button-style="success"
+                            state="vm.buttonState"
+                            label-key="buttons_save"></umb-button>
+            </umb-editor-footer-content-right>
+        </umb-editor-footer>
+    </umb-editor-view>
+</div>

@@ -10,6 +10,7 @@ Umbraco, its by no means complete, but hopefully it's helpful.
 # Snippets
 - [Migrations](/Src/DoStuff.Core/Migrations)
 - [Custom Sections](/Src/DoStuff.Core/Sections)
+- [Custom Trees](/Src/DoStuff.Core/Trees)
 - [Dashboard](/Src/DoStuff.Core/App_Plugins/DoStuff.Dashboard)
 
 
