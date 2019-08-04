@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace DoStuff.Core
 {
-    public class DoStuff
+    public static class DoStuff
     {
+        public static class Tables
+        {
+            public const string MySimpleTable = "DoStuff_Simple";
+        }
     }
 }

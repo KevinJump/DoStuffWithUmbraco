@@ -234,6 +234,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DoStuff.cs" />
+    <Compile Include="Migrations\AddColumn\AddColumnMigration.cs" />
+    <Compile Include="Migrations\AddIndex\AddIndexToTableMigration.cs" />
+    <Compile Include="Migrations\CreateTable\CreateTableMigration.cs" />
+    <Compile Include="Migrations\DoStuffMigrationPlan.cs" />
+    <Compile Include="Migrations\ExecuteSql\ExecuteSqlMigration.cs" />
+    <Compile Include="Migrations\MigrationComponent.cs" />
+    <Compile Include="Migrations\PostMigration\PostMigrationMigration.cs" />
+    <Compile Include="Models\MySimplePoco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sections\CustomSection.cs" />
     <Compile Include="Sections\CustomSectionComponent.cs" />
@@ -248,6 +256,7 @@
     <Content Include="App_Plugins\DoStuff.Dashboard\dashboard.html" />
     <Content Include="App_Plugins\DoStuff.Dashboard\Lang\en-us.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
