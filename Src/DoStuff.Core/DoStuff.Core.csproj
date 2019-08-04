@@ -256,6 +256,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Plugins\DoStuff.Dashboard\dashboard.html" />
+    <Content Include="App_Plugins\DoStuff.Dashboard\dashboardController.js" />
     <Content Include="App_Plugins\DoStuff.Dashboard\Lang\en-us.xml" />
   </ItemGroup>
   <ItemGroup />

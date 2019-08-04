@@ -1,4 +1,4 @@
-<div>
+<div ng-controller="doStuffDashboardController as vm">
     <!-- 
       A dashboard for our custom section:
         this dashboard is configured in the package.manifest file,
@@ -10,6 +10,18 @@
         </umb-box-header>
         <umb-box-content>
             Some dashboard content
+        </umb-box-content>
+        <umb-box-content>
+
+            <!-- umbraco button control
+                https://our.umbraco.com/apidocs/v8/ui/#/api/umbraco.directives.directive:umbButton 
+            -->
+            <umb-button action="vm.doThing()"
+                        type="button"
+                        state="vm.buttonState"
+                        label="Do a thing"
+                        button-style="action"></umb-button>
+
         </umb-box-content>
     </umb-box>
 </div>
