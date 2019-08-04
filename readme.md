@@ -7,6 +7,10 @@ this library is just a collection of things that I have needed
 to do/explain/remember while developing sites and packages for
 Umbraco, its by no means complete, but hopefully it's helpful.
 
+# Snippets
+- [Migrations](/Src/DoStuff.Core/Migrations)
+- [Custom Sections](/Src/DoStuff.Core/Sections)
+
 
 ## Structure
 The Project consists of two mail elements 
