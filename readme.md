@@ -1,4 +1,4 @@
-# doStuffWithUmbraco<sup>8</sup>
+# Do Stuff With Umbraco 8
 
 A Collection of patterns and samples of how to do things in
 umbraco 8.
@@ -18,6 +18,11 @@ of a jumping off point then a complete reference.
 - [ContentApp](/Src/DoStuff.Core/ContentApp)
 - [HealthChecks](/Src/DoStuff.Core/HealthChecks)
 - [Background Tasks](/Src/DoStuff.Core/BackgroundTasks)
+
+# Patterns
+*A bit more involved, combining some concepts*
+
+- [Repo/Service Pattern](/Src/DoStuff.Core/RepoPattern)
 
 ## Project Structure
 The Project consists of two main elements 

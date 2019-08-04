@@ -247,6 +247,15 @@
     <Compile Include="Migrations\PostMigration\PostMigrationMigration.cs" />
     <Compile Include="Models\MySimplePoco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepoPattern\DoStuffRepoPatternComposer.cs" />
+    <Compile Include="RepoPattern\Migrations\RepoPatternMigrationPlan.cs" />
+    <Compile Include="RepoPattern\Models\MyList.cs" />
+    <Compile Include="RepoPattern\Persistance\DoStuffRepositoryBase.cs" />
+    <Compile Include="RepoPattern\Persistance\IDoStuffRepository.cs" />
+    <Compile Include="RepoPattern\Persistance\MyListRepo.cs" />
+    <Compile Include="RepoPattern\RepoPattern.cs" />
+    <Compile Include="RepoPattern\Services\DoStuffBaseService.cs" />
+    <Compile Include="RepoPattern\Services\MyListService.cs" />
     <Compile Include="Sections\CustomSection.cs" />
     <Compile Include="Sections\CustomSectionComponent.cs" />
     <Compile Include="Sections\CustomSectionComposer.cs" />
@@ -261,6 +270,7 @@
     <None Include="HealthChecks\readme.md" />
     <None Include="Migrations\readme.md" />
     <None Include="packages.config" />
+    <None Include="RepoPattern\readme.md" />
     <None Include="Sections\readme.md" />
     <None Include="Trees\readme.md" />
   </ItemGroup>
