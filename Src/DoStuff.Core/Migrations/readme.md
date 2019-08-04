@@ -33,3 +33,13 @@ and then immediatly think you can do something in code with the
 data - you can't 
 
 To manipulate the data from a migration use a post migration step.
+
+# See also 
+
+Blogs from Stephan (Core team Dev)
+- https://www.zpqrtbnk.net/posts/migrations-in-v8/
+- https://www.zpqrtbnk.net/posts/migrations-in-v8-2/
+
+Umbraco Source for their own Migrations
+- https://github.com/umbraco/Umbraco-CMS/tree/v8/dev/src/Umbraco.Core/Migrations/Upgrade
+
