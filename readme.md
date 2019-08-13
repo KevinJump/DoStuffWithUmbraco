@@ -37,8 +37,8 @@ how things work and lift them from this section.
 mostly everything is in this project.*
 
 ### DoStuff.Site
-This is the umbraco site, mostly this is just a place 
-for things to run, the code will be in the libraries. 
+This is the umbraco site, Samples of how to do things in Views and Partials
+will live in this project (when we do some!)
 
 
 
