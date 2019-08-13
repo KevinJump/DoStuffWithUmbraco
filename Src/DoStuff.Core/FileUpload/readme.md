@@ -30,6 +30,8 @@ var filename = result.FileData.First().LocalFileName;
 ```
 
 ## Html
+For this example the angular/html exists in the [dashboard controller](../App_Plugins/DoStuff.Dashboard)
+
 using the shipped nfg file upload directive we just need to add a few attributes
 to the markup. 
 
@@ -57,10 +59,6 @@ to the markup.
 ```
 
 ## Angular.
-
-For this example the angular exists in the [dashboard controller](../App_Plugins/DoStuff.Dashboard)
-
----
 
 Handle files is fired when the user picks a file, we use it to set a value in
 our controller for the file that has been picked
