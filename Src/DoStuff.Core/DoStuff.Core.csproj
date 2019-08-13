@@ -237,6 +237,8 @@
     <Compile Include="BackgroundTasks\CustomBackgroundTask.cs" />
     <Compile Include="ContentApp\CustomContentApp.cs" />
     <Compile Include="DoStuff.cs" />
+    <Compile Include="FileUpload\DoStuffUploadApiController.cs" />
+    <Compile Include="FileUpload\FileUploadComponent.cs" />
     <Compile Include="HealthChecks\CustomHealthCheck.cs" />
     <Compile Include="Migrations\AddColumn\AddColumnMigration.cs" />
     <Compile Include="Migrations\AddIndex\AddIndexToTableMigration.cs" />
@@ -267,6 +269,7 @@
     <None Include="App_Plugins\DoStuffTree\package.manifest" />
     <None Include="BackgroundTasks\readme.md" />
     <None Include="ContentApp\readme.md" />
+    <None Include="FileUpload\readme.md" />
     <None Include="HealthChecks\readme.md" />
     <None Include="Migrations\readme.md" />
     <None Include="packages.config" />

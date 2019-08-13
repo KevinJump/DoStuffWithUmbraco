@@ -24,4 +24,33 @@
 
         </umb-box-content>
     </umb-box>
+
+    <umb-box>
+        <umb-box-header title="File Upload Demo"
+                        description="Upload a file to umbraco"></umb-box-header>
+        <umb-box-content>
+
+            <input id="dostufffilepicker"
+                   type="file"
+                   accept=""
+                   ngf-select
+                   ngf-model="filesHolder"
+                   ngf-change="vm.handleFiles($files, $event)"
+                   ngf-multipart="true" />
+
+            <label for="dostufffilepicker"
+                   class="btn btn-default">Choose File</label>
+
+            <umb-button action="vm.upload(vm.file)"
+                        type="button"
+                        label-key="general_upload"
+                        button-style="success"
+                        ng-if="vm.file != null"
+                        state="vm.buttonState"
+                        disabled="vm.buttonState == 'busy'">
+            </umb-button>
+
+
+        </umb-box-content>
+    </umb-box>
 </div>

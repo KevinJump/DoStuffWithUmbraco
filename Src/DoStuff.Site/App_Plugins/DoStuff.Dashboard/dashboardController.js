@@ -10,12 +10,44 @@
 
     'use strict';
 
-    function dashboardController($scope, notificationsService) {
+    function dashboardController($scope,
+        notificationsService, Upload) {
 
         var vm = this;
 
         vm.buttonState = 'init';
         vm.doThing = doThing;
+
+        /////////////// file upload
+
+        vm.handleFiles = handleFiles;
+        vm.upload = upload;
+
+        function upload(file) {
+            vm.buttonState = 'busy';
+            Upload.upload({
+                url: Umbraco.Sys.ServerVariables.doStuffFileUpload.uploadService + 'UploadFile',
+                fields: {
+                    'someId': 1234
+                },
+                file: file
+            }).success(function (data, status, headers, config) {
+                vm.buttonState = 'success';
+                notificationsService.success('Uploaded', data);
+            }).error(function (data, status, headers, config) {
+                vm.buttonState = 'error';
+                notificationsService.error('Upload Failed', data);
+            });
+        }
+
+
+        function handleFiles(files, event) {
+            if (files && files.length > 0) {
+                vm.file = files[0];
+            }
+        }
+
+        ///////////////
 
         //////// 
 

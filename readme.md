@@ -18,6 +18,7 @@ of a jumping off point then a complete reference.
 - [ContentApp](/Src/DoStuff.Core/ContentApp)
 - [HealthChecks](/Src/DoStuff.Core/HealthChecks)
 - [Background Tasks](/Src/DoStuff.Core/BackgroundTasks)
+- [File Upload](/Src/DoStuff.Core/FileUpload)
 
 # Patterns
 *A bit more involved, combining some concepts*
