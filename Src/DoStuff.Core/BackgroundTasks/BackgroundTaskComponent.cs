@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Umbraco.Core;
 using Umbraco.Core.Composing;
 using Umbraco.Core.Logging;
 using Umbraco.Web.Scheduling;
@@ -15,9 +16,11 @@ namespace DoStuff.Core.BackgroundTasks
     public class BackgroundTaskComponent : IComponent
     {
         private readonly IProfilingLogger logger;
+        private readonly IRuntimeState runtimeState;
 
-        public BackgroundTaskComponent(IProfilingLogger logger)
+        public BackgroundTaskComponent(IRuntimeState runtimeState, IProfilingLogger logger)
         {
+            this.runtimeState = runtimeState;
             this.logger = logger;
         }
 
@@ -31,7 +34,7 @@ namespace DoStuff.Core.BackgroundTasks
             var runner = new BackgroundTaskRunner<IBackgroundTask>("Custom Task", logger);
             if (runner != null)
             {
-                var check = new CustomBackgroundTask(runner, delay, period, logger);
+                var check = new CustomBackgroundTask(runner, delay, period, logger, runtimeState);
                 runner.Add(check);
             }
         }
