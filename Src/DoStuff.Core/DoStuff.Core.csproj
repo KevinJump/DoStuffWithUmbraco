@@ -239,6 +239,7 @@
     <Compile Include="BackgroundTasks\BackgroundTaskComponent.cs" />
     <Compile Include="BackgroundTasks\CustomBackgroundTask.cs" />
     <Compile Include="ContentApp\CustomContentApp.cs" />
+    <Compile Include="Controllers\DoStuffApiController.cs" />
     <Compile Include="DoStuff.cs" />
     <Compile Include="FileUpload\DoStuffUploadApiController.cs" />
     <Compile Include="FileUpload\FileUploadComponent.cs" />
@@ -255,6 +256,7 @@
     <Compile Include="RepoPattern\DoStuffRepoPatternComposer.cs" />
     <Compile Include="RepoPattern\Migrations\RepoPatternMigrationPlan.cs" />
     <Compile Include="RepoPattern\Models\MyList.cs" />
+    <Compile Include="RepoPattern\Persistance\DoStuffRepoOptions.cs" />
     <Compile Include="RepoPattern\Persistance\DoStuffRepositoryBase.cs" />
     <Compile Include="RepoPattern\Persistance\IDoStuffRepository.cs" />
     <Compile Include="RepoPattern\Persistance\MyListRepo.cs" />

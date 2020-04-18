@@ -16,6 +16,9 @@ namespace DoStuff.Core.RepoPattern
     {
         public void Compose(Composition composition)
         {
+            // configuration object for the repos
+            composition.RegisterUnique<DoStuffRepoOptions>();
+
             // register our repository
             composition.RegisterUnique<MyListRepo>();
 
@@ -25,7 +28,6 @@ namespace DoStuff.Core.RepoPattern
             // component for migration (db creation)
             composition.Components()
                 .Append<DoStuffRepoPatternComponent>();
-            
         }
     }
 

@@ -23,13 +23,10 @@ namespace DoStuff.Core.RepoPattern.Persistance
 
         protected DoStuffRepositoryBase(
             IScopeAccessor scopeAccessor,
-            IProfilingLogger logger,
-            string tableName)
+            IProfilingLogger logger)
         {
             this.scopeAccessor = scopeAccessor;
             this.logger = logger;
-
-            this.tableName = tableName;
         }
 
         protected IScope AmbientScope
@@ -38,7 +35,7 @@ namespace DoStuff.Core.RepoPattern.Persistance
             {
                 var scope = scopeAccessor.AmbientScope;
                 if (scope == null)
-                    throw new InvalidOperationException("Cannot run repositor without an ambient scope");
+                    throw new InvalidOperationException("Cannot run repository without an ambient scope");
 
                 return scope;
             }
