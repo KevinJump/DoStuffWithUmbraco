@@ -27,10 +27,22 @@
 
 .usync-action-message {
     font-weight: 700;
+    margin: 0 0 20px;
+}
+
+.usync-action-message-step {
+    margin: 0 0 20px;
+    font-weight: 700;
 }
 
 .usync-detail-count {
     padding: 6px 0;
+}
+
+.usync-item-detail-message {
+    font-weight: 700;
+    border-left: 4px solid #ccc;
+    padding: 5px;
 }
 
 .usync-item-details {
@@ -57,6 +69,14 @@
 
     .usync-item-details .usync-new-value {
         color: #2e7d32
+    }
+
+.usync-item-details .umb-table-cell {
+    margin-top: 10px;
+}
+
+    .usync-item-details .umb-table-row {
+        align-items: flex-start;
     }
 
 .usync-row-delete {
@@ -89,12 +109,12 @@
     }
 
     .usync-handler-icon .badge.type-complete {
-        background-color: #35c786;
+        background-color: #27b171;
     }
 
     .usync-handler-icon .handler-badge i {
         font-size: 16px;
-        color: #35c786;
+        color: #27b171;
     }
 
     .usync-handler-icon .usync-handler-name {
@@ -116,9 +136,8 @@
     }
 
     .usync-handler-icon.usync-complete {
-        color: #35c786;
+        color: #1b264f;
     }
-
         .usync-handler-icon.usync-complete .usync-addon-icon {
             color: #7b1fa2;
         }
@@ -157,10 +176,29 @@
         margin-bottom: 0;
     }
 
+.usync-not-animated {
+    width: calc(100% + 1.5em);
+    margin: 10px -0.75em;
+    height: 3px;
+    border-radius: 0px;
+}
+
+    .usync-not-animated .bar {
+        background-color: #0D47A1;
+        background-image: none;
+    }
+
+    .usync-not-animated.usync-complete-changes .bar {
+        background-color: #27b171;
+    }
+
+    .usync-not-animated.usync-handler-errors .bar {
+        background-color: #ff5722;
+    }
+
 .usync-not-animated .bar {
     transition: none;
 }
-
 
 .usync-boxes {
     display: grid;
@@ -196,17 +234,17 @@
     text-align: left;
 }
 
-.usync-box-nuget a {
-    background-color: black;
-    display: block;
-    color: #fff;
-    font-family: monospace;
-    padding: 10px 10px;
-    border-radius: 4px;
-    margin: 10px 0;
-}
+    .usync-box-nuget a {
+        background-color: #1b264f;
+        display: block;
+        color: #fff;
+        font-family: monospace;
+        padding: 10px 10px;
+        border-radius: 4px;
+        margin: 10px 0;
+    }
 
-.usync-box-inprogress { 
+.usync-box-inprogress {
     opacity: 0.5;
 }
 
@@ -225,4 +263,126 @@
     font-style: italic;
     color: #444;
     margin-top: 2px;
+}
+
+.usync-extras {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .usync-extras > div {
+        padding: 10vh 0;
+        text-align: center;
+        font-size: 120%;
+    }
+
+.usync-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .usync-banner h2 {
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+        padding: 10px 0;
+    }
+
+        .usync-banner h2 > i {
+            padding-right: 15px;
+            font-size: 60px;
+        }
+
+    .usync-banner p {
+        font-size: 120%;
+        margin: 20px;
+        line-height: 1.5;
+    }
+
+    .usync-banner .btn {
+        margin-top: 40px;
+    }
+
+.banner-icons {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    margin: 25px 0;
+    font-weight: bold;
+}
+
+    .banner-icons > div {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .banner-icons > div > i {
+            display: block;
+            padding: 20px;
+            font-size: 160%;
+            color: rgba(0,0,0,0.5);
+        }
+
+.usync-pane-fade {
+    margin: -20px;
+    background: linear-gradient(#e3e3f1, #f6f4f4);
+}
+
+.usync-handler-box .umb-box-header {
+    cursor: pointer;
+}
+
+.usync-detail-link-cell {
+    min-width: 120px;
+}
+
+.usync-detail-link-cell .btn {
+    padding: 6px;
+}
+
+.usync-main-progress {
+    margin: 0 -20px -20px -20px;
+}
+
+.usync-table-message-cell {
+    flex-basis: 25%;
+}
+
+.usync-alert a {
+    text-decoration: underline;
+}
+
+.usync-report-no-changes {
+    margin: 50px 0;
+}
+.usync-report-no-changes h4 {
+    font-weight: 700;
+}
+
+/* diff view */
+.umb-table-cell.usync-diff-value > * {
+    white-space: pre-wrap;
+}
+
+.umb-table-cell.usync-diff-value pre {
+    border: none;
+    padding: 0;
+    font-family: monospace;
+    background-color: transparent;
+}
+
+    .umb-table-cell.usync-diff-value pre del {
+        color: red;
+    }
+
+    .umb-table-cell.usync-diff-value pre ins {
+        color: green;
+    }
+
+
+
+.usync-change-row-Fail {
+    background-color: #FFEBEE;
 }

@@ -1,43 +1,69 @@
 ﻿<div ng-controller="uSync8Controller as vm">
 
-    <umb-editor-sub-header>
-        <umb-editor-sub-header-content-left>
-            <div>
-                <umb-button type="button"
-                            button-style="info"
-                            label-key="usync_report"
-                            action="vm.report()"
-                            disabled="vm.working">
-                </umb-button>
-                <umb-button-group default-button="vm.importButton.defaultButton"
-                                  sub-buttons="vm.importButton.subButtons"
-                                  direction="down"
-                                  float="right"
-                                  button-style="success"
-                                  state="vm.impotButton.state">
+    <div ng-if="vm.versionInfo.IsCurrent != true" class="alert alert-info usync-alert">
+        <localize key="usync_newer"></localize> [v{{vm.versionInfo.VersionInfo.Core}}]
+        <span ng-if="vm.versionInfo.VersionInfo.Message">
+            <a href="{{vm.versionInfo.VersionInfo.Link}}" target="_blank">
+                {{vm.versionInfo.VersionInfo.Message}}
+            </a>
+        </span>
+    </div>
 
-                </umb-button-group>
+    <umb-box ng-if="!vm.loading">
+        <umb-box-content>
+            <div class="flex justify-between items-center">
+                <div class="usync-main-buttons">
 
-                <umb-button type="button"
-                            button-style="neutral"
-                            label-key="usync_export"
-                            action="vm.exportItems()"
-                            disabled="vm.working">
-                </umb-button>
+                    <umb-button-group default-button="vm.reportButton.defaultButton"
+                                      sub-buttons="vm.reportButton.subButtons"
+                                      direction="down"
+                                      float="left"
+                                      button-style="action"
+                                      state="vm.reportButton.state">
+
+                    </umb-button-group>
+
+                    <umb-button-group default-button="vm.importButton.defaultButton"
+                                      sub-buttons="vm.importButton.subButtons"
+                                      direction="down"
+                                      float="left"
+                                      button-style="success"
+                                      state="vm.importButton.state">
+                    </umb-button-group>
+
+
+                    <umb-button-group default-button="vm.exportButton.defaultButton"
+                                      sub-buttons="vm.exportButton.subButtons"
+                                      direction="down"
+                                      float="left"
+                                      button-style="info"
+                                      state="vm.exportButton.state">
+                    </umb-button-group>
+
+                </div>
+
+                <div>
+                    <div ng-if="vm.savings.show">
+                        {{vm.savings.title}}  {{vm.savings.message}}
+                    </div>
+                </div>
             </div>
-        </umb-editor-sub-header-content-left>
-    </umb-editor-sub-header>
+        </umb-box-content>
+    </umb-box>
 
     <umb-box>
         <umb-box-content ng-if="vm.working || vm.reported">
-            <usync-progress-view update="vm.update" 
+            <usync-progress-view update="vm.update"
                                  status="vm.status"
                                  hide-labels="false" />
         </umb-box-content>
     </umb-box>
 
     <div ng-if="vm.reported">
-        <usync-report-view actions="vm.actions" results="vm.results" />
+        <usync-report-view actions="vm.actions"
+                           results="vm.results"
+                           hide-action="true"
+                           hide-link="vm.hideLink" />
     </div>
 
 </div>
