@@ -1,4 +1,5 @@
 ﻿using DoStuff.Core.RepoPattern.Migrations;
+using DoStuff.Core.RepoPattern.Models;
 using DoStuff.Core.RepoPattern.Persistance;
 using DoStuff.Core.RepoPattern.Services;
 
@@ -16,8 +17,11 @@ namespace DoStuff.Core.RepoPattern
     {
         public void Compose(Composition composition)
         {
+            // configuration object for the repos
+            composition.RegisterUnique<DoStuffRepoOptions>();
+
             // register our repository
-            composition.RegisterUnique<MyListRepo>();
+            composition.RegisterUnique<IDoStuffRepository<MyList>, MyListRepo>();
 
             // register our service 
             composition.RegisterUnique<MyListService>();
@@ -25,7 +29,6 @@ namespace DoStuff.Core.RepoPattern
             // component for migration (db creation)
             composition.Components()
                 .Append<DoStuffRepoPatternComponent>();
-            
         }
     }
 

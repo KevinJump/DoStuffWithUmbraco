@@ -21,10 +21,16 @@
             report: report,
             exportItems: exportItems,
             importItems: importItems,
+            importItem: importItem,
             saveSettings: saveSettings,
+
             getLoadedHandlers: getLoadedHandlers,
             getAddOns: getAddOns,
-            getAddOnSplash: getAddOnSplash
+            getAddOnSplash: getAddOnSplash,
+
+            getHandlerGroups: getHandlerGroups,
+
+            checkVersion: checkVersion
         };
 
         return service;
@@ -52,20 +58,37 @@
         }
 
 
-        function report(clientId) {
-            return $http.post(serviceRoot + 'report', { clientId: clientId });
+        function report(group, clientId) {
+            return $http.post(serviceRoot + 'report', { clientId: clientId, group: group });
         }
 
-        function exportItems (clientId) {
-            return $http.post(serviceRoot + 'export', { clientId: clientId });
+        function exportItems (clientId, clean) {
+            return $http.post(serviceRoot + 'export', { clientId: clientId, clean: clean });
         }
 
-        function importItems(force, clientId) {
-            return $http.put(serviceRoot + 'import', { force: force, clientId: clientId });
+        function importItems(force, group, clientId) {
+            return $http.put(serviceRoot + 'import',
+                {
+                    force: force,
+                    group: group,
+                    clientId: clientId
+                });
+        }
+
+        function importItem(item) {
+            return $http.put(serviceRoot + 'importItem', item);
         }
 
         function saveSettings(settings) {
             return $http.post(serviceRoot + 'savesettings', settings);
+        }
+
+        function getHandlerGroups() {
+            return $http.get(serviceRoot + 'GetHandlerGroups');
+        }
+
+        function checkVersion() {
+            return $http.get(serviceRoot + 'CheckVersion');
         }
     }
 

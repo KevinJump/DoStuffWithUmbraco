@@ -11,9 +11,10 @@ namespace DoStuff.Core.RepoPattern.Persistance
 {
     public class MyListRepo : DoStuffRepositoryBase<MyList>
     {
-        public MyListRepo(IScopeAccessor scopeAccessor, IProfilingLogger logger, string tableName) 
-            : base(scopeAccessor, logger, tableName)
+        public MyListRepo(IScopeAccessor scopeAccessor, IProfilingLogger logger, DoStuffRepoOptions doStuffRepoOptions) 
+            : base(scopeAccessor, logger)
         {
+            this.tableName = doStuffRepoOptions.MyListTable;
         }
     }
 }
