@@ -19,6 +19,7 @@ of a jumping off point then a complete reference.
 - [HealthChecks](/Src/DoStuff.Core/HealthChecks)
 - [Background Tasks](/Src/DoStuff.Core/BackgroundTasks)
 - [File Upload](/Src/DoStuff.Core/FileUpload)
+- [SignalR](/Src/DoStuff.Core/SignalR)
 
 # Patterns
 *A bit more involved, combining some concepts*

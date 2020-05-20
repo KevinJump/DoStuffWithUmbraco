@@ -21,6 +21,22 @@
                         state="vm.buttonState"
                         label="Do a thing"
                         button-style="action"></umb-button>
+        </umb-box-content>
+
+        <umb-box-content>
+
+
+            <umb-button action="vm.callAnEndPoint()"
+                        type="button"
+                        state="vm.buttonState"
+                        label="Call a method"
+                        button-style="info"></umb-button>
+        </umb-box-content>
+        <umb-box-content>
+
+            <div>
+                SignalR says : {{vm.message}}
+            </div>
 
         </umb-box-content>
     </umb-box>

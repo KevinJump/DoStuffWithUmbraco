@@ -266,11 +266,14 @@
     <Compile Include="Sections\CustomSection.cs" />
     <Compile Include="Sections\CustomSectionComponent.cs" />
     <Compile Include="Sections\CustomSectionComposer.cs" />
+    <Compile Include="SignalR\DoStuffHub.cs" />
+    <Compile Include="SignalR\DoStuffSignalRApiController.cs" />
     <Compile Include="Trees\MyCustomTreeController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="App_Plugins\DoStuff.Dashboard\package.manifest" />
+    <None Include="App_Plugins\DoStuff.SignalR\package.manifest" />
     <None Include="App_Plugins\DoStuffTree\package.manifest" />
     <None Include="BackgroundTasks\readme.md" />
     <None Include="ContentApp\readme.md" />
@@ -280,13 +283,16 @@
     <None Include="packages.config" />
     <None Include="RepoPattern\readme.md" />
     <None Include="Sections\readme.md" />
+    <None Include="SignalR\readme.md" />
     <None Include="Trees\readme.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Plugins\DoStuff.ContentApp\ContentApp.html" />
     <Content Include="App_Plugins\DoStuff.Dashboard\dashboard.html" />
     <Content Include="App_Plugins\DoStuff.Dashboard\dashboardController.js" />
+    <Content Include="App_Plugins\DoStuff.SignalR\signalRService.js" />
     <Content Include="App_Plugins\DoStuff.Dashboard\Lang\en-us.xml" />
+    <Content Include="App_Plugins\DoStuff.SignalR\signalRHub.js" />
     <Content Include="App_Plugins\DoStuffTree\backoffice\CustomTree\edit.html" />
     <Content Include="App_Plugins\DoStuffTree\backoffice\CustomTree\editController.js" />
   </ItemGroup>

@@ -11,12 +11,17 @@
     'use strict';
 
     function dashboardController($scope,
-        notificationsService, Upload) {
+        notificationsService, Upload,
+        doStuffHub, doStuffSignalRService) {
 
         var vm = this;
 
         vm.buttonState = 'init';
         vm.doThing = doThing;
+        vm.callAnEndPoint = callAnEndPoint;
+
+        // Setup the SignalR Hub
+        setupHub();
 
         /////////////// file upload
 
@@ -40,21 +45,64 @@
             });
         }
 
-
         function handleFiles(files, event) {
             if (files && files.length > 0) {
                 vm.file = files[0];
             }
         }
 
-        ///////////////
 
         //////// 
 
         function doThing() {
-            notificationsService.success('Done', 'The thing has been done');
-            vm.buttonState = 'success';
+
+            // invoking a signalR method on our hub
+            //  this method broadcasts to all clients
+            vm.hub.invoke('hello', "this is our message",
+                function (result) {
+                    notificationsService.success('Done', 'The thing has been done');
+                    vm.buttonState = 'success';
+                });
+
         }
+
+        /////////////// SignalR 
+        vm.message = '';
+
+        // SignlaR - Initialization
+        function setupHub() {
+
+            doStuffHub.initHub(function (hub) {
+
+                // set hub as part of controller 
+                // (makes it easier to get to in other methods)
+                vm.hub = hub;
+
+                // register the events you want to do things for
+                vm.hub.on('hello', function (data) {
+                    vm.message = data;
+                    console.log(data);
+                });
+
+                // start the hub connection
+                vm.hub.start();
+            })
+        }
+
+
+        // calling an enpoint with the signalR client id from the hub
+        // so only we get the messages back. 
+        function callAnEndPoint() {
+
+            doStuffSignalRService.myMessageMethod("Calling", vm.hub.clientId())
+                .then(function (result) {
+                    console.log(result.data);
+                    notificationsService.success('Done', 'The thing has been done');
+                });
+
+        }
+
+
     }
 
     angular.module('umbraco')
