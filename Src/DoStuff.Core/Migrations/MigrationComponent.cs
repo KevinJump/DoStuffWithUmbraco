@@ -15,6 +15,7 @@ namespace DoStuff.Core.Migrations
     /// <summary>
     ///  short hand composer if you are just registering a component 
     /// </summary>
+    [RuntimeLevel(MinLevel = Umbraco.Core.RuntimeLevel.Run)]
     public class MigrationComponentComposer : ComponentComposer<MigrationComponent>
     { }
 
