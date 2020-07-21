@@ -12,6 +12,7 @@
 
     function dashboardController($scope,
         notificationsService, Upload,
+        umbRequestHelper,
         doStuffHub, doStuffSignalRService) {
 
         var vm = this;
@@ -27,6 +28,7 @@
 
         vm.handleFiles = handleFiles;
         vm.upload = upload;
+        vm.download = download;
 
         function upload(file) {
             vm.buttonState = 'busy';
@@ -51,8 +53,32 @@
             }
         }
 
-
         //////// 
+
+        ///////////// file download 
+
+        function download() {
+
+            var message = 'Hello from here';
+            var count = 100;
+
+            vm.buttonState = 'busy';
+
+            var url = Umbraco.Sys.ServerVariables.doStuffFileDownload.downloadService + 'DownloadText' + "?message=" + message + "&count=" + count;
+
+            umbRequestHelper.downloadFile(url)
+                .then(function (result) {
+                    vm.buttonState = 'success';
+                    notificationsService.success('Downloaded', 'File downloaded');
+                }, function (error) {
+                    vm.buttonState = 'error';
+                    notificationsService.error('Error', 'Failed to download');
+                });
+        }
+
+
+
+        ////////
 
         function doThing() {
 

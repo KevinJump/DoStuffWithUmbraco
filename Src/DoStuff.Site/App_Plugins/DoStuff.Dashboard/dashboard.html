@@ -69,4 +69,20 @@
 
         </umb-box-content>
     </umb-box>
+
+    <umb-box>
+        <umb-box-header title="File download demo"
+                        description="Download a file from umbraco"></umb-box-header>
+
+        <umb-box-content>
+
+            <umb-button action="vm.download()"
+                        type="button"
+                        label="Download"
+                        button-style="primary"
+                        state="vm.buttonState"
+                        disabled="vm.buttonState == 'busy'"></umb-button>
+
+        </umb-box-content>
+    </umb-box>
 </div>
