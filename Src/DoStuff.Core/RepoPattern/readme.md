@@ -13,7 +13,7 @@ we can inherit and extend as needed.
 For this example the model stored in the DB is the model 
 we want to work with, (no mapping)
 
-See the [Peristance Folder](persistance)
+See the [Persistance Folder](Persistance)
 
 ## Serivice
 Similary the service is based on a base service that 
