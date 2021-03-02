@@ -21,7 +21,7 @@ of a jumping off point then a complete reference.
 - [File Upload](/Src/DoStuff.Core/FileUpload)
 - [File Download](/Src/DoStuff.Core/FileDownload)
 - [SignalR](/Src/DoStuff.Core/SignalR)
-- [OverlayService](/Src/DoStuff.Core/App_Plugins/DoStuff.Dashboard/overlay/)
+- [OverlayService](/Src/DoStuff.Core/App_Plugins/DoStuff.Dashboard/)
 
 # Patterns
 *A bit more involved, combining some concepts*
