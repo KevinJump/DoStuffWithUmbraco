@@ -14,13 +14,14 @@ of a jumping off point then a complete reference.
 - [Migrations](/Src/DoStuff.Core/Migrations)
 - [Custom Sections](/Src/DoStuff.Core/Sections)
 - [Custom Trees](/Src/DoStuff.Core/Trees)
-- [Dashboard](/Src/DoStuff.Core/App_Plugins/DoStuff.Dashboard)
 - [ContentApp](/Src/DoStuff.Core/ContentApp)
+- [Dashboard](/Src/DoStuff.Core/App_Plugins/DoStuff.Dashboard)
 - [HealthChecks](/Src/DoStuff.Core/HealthChecks)
 - [Background Tasks](/Src/DoStuff.Core/BackgroundTasks)
 - [File Upload](/Src/DoStuff.Core/FileUpload)
 - [File Download](/Src/DoStuff.Core/FileDownload)
 - [SignalR](/Src/DoStuff.Core/SignalR)
+- [OverlayService](/Src/DoStuff.Core/App_Plugins/DoStuff.Dashboard/overlay/)
 
 # Patterns
 *A bit more involved, combining some concepts*
