@@ -1,88 +1,16 @@
 <div ng-controller="doStuffDashboardController as vm">
-    <!-- 
-      A dashboard for our custom section:
-        this dashboard is configured in the package.manifest file,
-        you can also do this is code in a similar way to the section.
-    -->
-    <umb-box>
-        <umb-box-header title="Do Stuff with Umbraco 8"
-                        description="A Collection of code snippets to do things">
-        </umb-box-header>
-        <umb-box-content>
-            Some dashboard content
-        </umb-box-content>
-        <umb-box-content>
 
-            <!-- umbraco button control
-                https://our.umbraco.com/apidocs/v8/ui/#/api/umbraco.directives.directive:umbButton 
-            -->
-            <umb-button action="vm.doThing()"
-                        type="button"
-                        state="vm.buttonState"
-                        label="Do a thing"
-                        button-style="action"></umb-button>
-        </umb-box-content>
-
-        <umb-box-content>
-
-
-            <umb-button action="vm.callAnEndPoint()"
-                        type="button"
-                        state="vm.buttonState"
-                        label="Call a method"
-                        button-style="info"></umb-button>
-        </umb-box-content>
-        <umb-box-content>
-
-            <div>
-                SignalR says : {{vm.message}}
-            </div>
-
-        </umb-box-content>
-    </umb-box>
-
-    <umb-box>
-        <umb-box-header title="File Upload Demo"
-                        description="Upload a file to umbraco"></umb-box-header>
-        <umb-box-content>
-
-            <input id="dostufffilepicker"
-                   type="file"
-                   accept=""
-                   ngf-select
-                   ngf-model="filesHolder"
-                   ngf-change="vm.handleFiles($files, $event)"
-                   ngf-multipart="true" />
-
-            <label for="dostufffilepicker"
-                   class="btn btn-default">Choose File</label>
-
-            <umb-button action="vm.upload(vm.file)"
-                        type="button"
-                        label-key="general_upload"
-                        button-style="success"
-                        ng-if="vm.file != null"
-                        state="vm.buttonState"
-                        disabled="vm.buttonState == 'busy'">
-            </umb-button>
-
-
-        </umb-box-content>
-    </umb-box>
-
-    <umb-box>
-        <umb-box-header title="File download demo"
-                        description="Download a file from umbraco"></umb-box-header>
-
-        <umb-box-content>
-
-            <umb-button action="vm.download()"
-                        type="button"
-                        label="Download"
-                        button-style="primary"
-                        state="vm.buttonState"
-                        disabled="vm.buttonState == 'busy'"></umb-button>
-
-        </umb-box-content>
-    </umb-box>
+    <umb-editor-view footer="false">
+        <umb-editor-header name="vm.title"
+                           description="vm.description"
+                           name-locked="true"
+                           description-locked="true"
+                           hide-alias="true"
+                           hide-icon="true"
+                           navigation="vm.navigation">
+        </umb-editor-header>
+        <umb-editor-container class="form-horizontal">
+            <umb-editor-sub-views sub-views="vm.navigation" model="vm"></umb-editor-sub-views>
+        </umb-editor-container>
+    </umb-editor-view>
 </div>

@@ -293,6 +293,12 @@
     <Content Include="App_Plugins\DoStuff.ContentApp\ContentApp.html" />
     <Content Include="App_Plugins\DoStuff.Dashboard\dashboard.html" />
     <Content Include="App_Plugins\DoStuff.Dashboard\dashboardController.js" />
+    <Content Include="App_Plugins\DoStuff.Dashboard\default.html" />
+    <Content Include="App_Plugins\DoStuff.Dashboard\defaultDashboardController.js" />
+    <Content Include="App_Plugins\DoStuff.Dashboard\overlay.html" />
+    <Content Include="App_Plugins\DoStuff.Dashboard\overlayController.js" />
+    <Content Include="App_Plugins\DoStuff.Dashboard\overlay\customOverlayController.js" />
+    <Content Include="App_Plugins\DoStuff.Dashboard\overlay\customOverlay.html" />
     <Content Include="App_Plugins\DoStuff.SignalR\signalRService.js" />
     <Content Include="App_Plugins\DoStuff.Dashboard\Lang\en-us.xml" />
     <Content Include="App_Plugins\DoStuff.SignalR\signalRHub.js" />

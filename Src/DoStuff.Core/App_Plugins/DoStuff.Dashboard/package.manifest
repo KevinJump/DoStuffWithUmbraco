@@ -1,5 +1,12 @@
 {
-  "javascript": [ "~/App_Plugins/DoStuff.Dashboard/dashboardController.js" ],
+  "javascript": [
+    "~/App_Plugins/DoStuff.Dashboard/defaultDashboardController.js",
+    "~/App_Plugins/DoStuff.Dashboard/dashboardController.js",
+    "~/App_Plugins/DoStuff.Dashboard/overlayController.js",
+
+    "~/App_Plugins/DoStuff.Dashboard/overlay/customOverlayController.js"
+
+  ],
   "dashboards": [
     {
       "alias": "customDashboard",
