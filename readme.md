@@ -1,5 +1,12 @@
 # Do Stuff With Umbraco 8
 
+---
+## #NEW! - have a look at the NetCore version of this repo. for .net core umbraco goodies!
+
+### https://github.com/KevinJump/DoStuffWithUmbraco/tree/NetCore
+
+---
+
 A Collection of patterns and samples of how to do things in
 umbraco 8.
 
