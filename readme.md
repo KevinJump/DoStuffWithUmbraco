@@ -1,47 +1,47 @@
-# Do Stuff With Umbraco 8
+> Current Umbraco Build : Nightly 9.0.0-beta001.20210304.12
 
-A Collection of patterns and samples of how to do things in
-umbraco 8.
+**⚠ This is a work in progress, information nearly right at time of going to press etc.**
 
-this library is just a collection of things that I have needed
-to do/explain/remember while developing sites and packages for
-Umbraco, its by no means complete, but hopefully it's helpful.
+# DoStuffWithUmbraco "NetCore" Version
 
-On the whole these are minimal implimentations of things - more
-of a jumping off point then a complete reference. 
+A collection of patterns and samples of how to do things in Umbraco .net core version.
 
-# Snippets
-- [Migrations](/Src/DoStuff.Core/Migrations)
-- [Custom Sections](/Src/DoStuff.Core/Sections)
-- [Custom Trees](/Src/DoStuff.Core/Trees)
-- [ContentApp](/Src/DoStuff.Core/ContentApp)
-- [Dashboard](/Src/DoStuff.Core/App_Plugins/DoStuff.Dashboard)
-- [HealthChecks](/Src/DoStuff.Core/HealthChecks)
-- [Background Tasks](/Src/DoStuff.Core/BackgroundTasks)
-- [File Upload](/Src/DoStuff.Core/FileUpload)
-- [File Download](/Src/DoStuff.Core/FileDownload)
-- [SignalR](/Src/DoStuff.Core/SignalR)
-- [OverlayService](/Src/DoStuff.Core/App_Plugins/DoStuff.Dashboard/)
+Join us on a journey as we explore the changes in the UniCore version of Umbraco. 
+We are working on the latest builds of UniCore, to see how to do things in this brave new world. 
 
-# Patterns
-*A bit more involved, combining some concepts*
-
-- [Repo/Service Pattern](/Src/DoStuff.Core/RepoPattern)
-
-## Project Structure
-The Project consists of two main elements 
-
-### DoStuff.Core 
-The Core library has all the code examples in, for things
-like sections, migrations etc. you should be able to see 
-how things work and lift them from this section.
-
-*there is a gulp script to copy files from app_plugins to the site, so 
-mostly everything is in this project.*
-
-### DoStuff.Site
-This is the umbraco site, Samples of how to do things in Views and Partials
-will live in this project (when we do some!)
+## Build Status
+As Umbraco NetCore development evolves things will change, and stuff may move about. at the moment this repo is working from nightly builds, when alphas, betas and Release candidates are available we will update 
 
 
+## Where is X 
+As we work through examples, we hope to write some 'if you use to do x now do y' type examples:
 
+- [WhereIs X](WhereIs/readme.md)
+
+
+## Snippets
+Quick examples of how to do things. We will first replicate the same snippets that live in the [DoStuffInUmbraco](https://github.com/KevinJump/DoStuffWithUmbraco/tree/v8) repo
+
+- [x] [Migrations](./src/DoStuff.Core/Migrations/)
+- [x] [Custom Sections](./src/DoStuff.Core/Sections/)
+- [x] [Custom Trees](./src/DoStuff.Core/Trees/)
+- [x] [ContentApp](./src/DoStuff.Core/ContentApp/)
+- [x] [Dashboard](./src/DoStuff.Core/App_Plugins/DoStuff.Dashboard/)
+- [x] [HealthChecks](./src/DoStuff.Core/HealthChecks/)
+- [ ] Background Task
+- [ ] File upload
+- [ ] File Download
+- [ ] SignalR 
+- [x] [Overlay Service](./src/DoStuff.Core/App_Plugins/DoStuff.Dashboard/)
+
+
+## Patterns
+A bit more involved combining more concepts
+
+- [ ] Repo/Service pattern
+
+
+## Project Structure 
+The project contains a Umbraco.core site (DoStuff.Site) and a core library DoStuff.Core 
+
+The core library contains the code examples, and samples and things that you might want to do in the back office of umbraco.

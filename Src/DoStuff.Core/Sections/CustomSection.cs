@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Umbraco.Core.Models.Sections;
+
+using Umbraco.Cms.Core.Sections;
 
 namespace DoStuff.Core.Sections
 {
@@ -24,7 +25,7 @@ namespace DoStuff.Core.Sections
         /// </remarks>
         public const string SectionAlias = "doStuffSection";
 
-        #region ISection Interface 
+        ///// Interface
 
         /// <summary>
         ///  Alias of section, used in urls, trees etc
@@ -36,7 +37,5 @@ namespace DoStuff.Core.Sections
         ///  they see a value from the lang file
         /// </summary>
         public string Name => "Do Stuff Section";
-
-        #endregion
     }
 }

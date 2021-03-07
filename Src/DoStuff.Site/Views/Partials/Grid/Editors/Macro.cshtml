@@ -1,12 +1,10 @@
-﻿@inherits UmbracoViewPage<dynamic>
-@using Umbraco.Web.Templates
-
+@inherits Umbraco.Web.Common.AspNetCore.UmbracoViewPage<dynamic>
 
 @if (Model.value != null)
 {
     string macroAlias = Model.value.macroAlias.ToString();
-    ViewDataDictionary parameters = new ViewDataDictionary();
-    foreach (dynamic mpd in Model.value.macroParamsDictionary)
+    var parameters = new Dictionary<string,object>();
+    foreach (var mpd in Model.value.macroParamsDictionary)
     {
         parameters.Add(mpd.Name, mpd.Value);
     }

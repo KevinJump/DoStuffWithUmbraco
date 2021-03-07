@@ -1,6 +1,7 @@
-﻿@inherits UmbracoViewPage<dynamic>
-@using Umbraco.Web.Templates
+@using System.Web
+@using Microsoft.AspNetCore.Html
 @using Newtonsoft.Json.Linq
+@inherits Umbraco.Web.Common.AspNetCore.UmbracoViewPage<dynamic>
 
 @if (Model != null && Model.sections != null)
 {
@@ -11,8 +12,9 @@
         {
             foreach (var section in Model.sections) {
                 <div class="grid-section">
-                    @foreach (var row in section.rows) {
-                        @renderRow(row, true);
+                    @foreach (var row in section.rows)
+                    {
+                        renderRow(row, true);
                     }
                 </div>
             }
@@ -22,8 +24,9 @@
                     @foreach (var s in Model.sections) {
                         <div class="grid-section">
                             <div class="col-md-@s.grid column">
-                                @foreach (var row in s.rows) {
-                                    @renderRow(row, false);
+                                @foreach (var row in s.rows)
+                                {
+                                    renderRow(row, false);
                                 }
                             </div>
                         </div>
@@ -34,27 +37,37 @@
     </div>
 }
 
-@helper renderRow(dynamic row, bool singleColumn){
-    <div @RenderElementAttributes(row)>
-        @Html.If(singleColumn, "<div class='container'>")
-        <div class="row clearfix">
-            @foreach ( var area in row.areas ) {
-            <div class="col-md-@area.grid column">
-                <div @RenderElementAttributes(area)>
-                    @foreach (var control in area.controls) {
-                        if (control !=null && control.editor != null && control.editor.view != null ) {
-                            <text>@Html.Partial("grid/editors/base", (object)control)</text>
-                        }
-                    }
-                </div>
-            </div>}
+@functions {
+
+    private void renderRow(dynamic row, bool singleColumn)
+    {
+        <div @RenderElementAttributes(row)>
+            @if (singleColumn) {
+                @:<div class="container">
+            }
+            <div class="row clearfix">
+                @foreach ( var area in row.areas ) {
+                    <div class="col-md-@area.grid column">
+                        <div @RenderElementAttributes(area)>
+                            @foreach (var control in area.controls) {
+                                if (control !=null && control.editor != null && control.editor.view != null ) {
+                                    <text>@Html.Partial("grid/editors/base", (object)control)</text>
+                                }
+                            }
+                        </div>
+                    </div>}
+            </div>
+            @if (singleColumn) {
+                @:</div>
+            }
         </div>
-        @Html.If(singleColumn, "</div>")
-    </div>
+    }
+
 }
 
+
 @functions {
-    public static MvcHtmlString RenderElementAttributes(dynamic contentItem)
+    public static HtmlString RenderElementAttributes(dynamic contentItem)
     {
         var attrs = new List<string>();
         JObject cfg = contentItem.config;
@@ -83,6 +96,6 @@
                 attrs.Add("style=\"" + HttpUtility.HtmlAttributeEncode(string.Join(" ", cssVals)) + "\"");
         }
 
-        return new MvcHtmlString(string.Join(" ", attrs));
+        return new HtmlString(string.Join(" ", attrs));
     }
 }

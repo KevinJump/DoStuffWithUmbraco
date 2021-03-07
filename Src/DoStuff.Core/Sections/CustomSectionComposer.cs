@@ -1,24 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using Umbraco.Core;
-using Umbraco.Core.Composing;
-using Umbraco.Web;
+
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
 
 namespace DoStuff.Core.Sections
 {
     public class CustomSectionComposer : IUserComposer
     {
-        public void Compose(Composition composition)
+        public void Compose(IUmbracoBuilder builder)
         {
-            // register the section 
-            composition.Sections().Append<CustomSection>();
+            builder.Sections().Append<CustomSection>();
 
-            // register the component that adds the section
-            // to the admin group 
-            composition.Components().Append<CustomSectionComponent>();
+            builder.Components().Append<CustomSectionComponent>();
         }
     }
 }

@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Umbraco.Core.Logging;
-using Umbraco.Core.Migrations;
+﻿
+using Microsoft.Extensions.Logging;
+
+using Umbraco.Cms.Core.Migrations;
+using Umbraco.Cms.Infrastructure.Migrations;
 
 namespace DoStuff.Core.Migrations
 {
@@ -36,24 +34,24 @@ namespace DoStuff.Core.Migrations
 
         public override void Migrate()
         {
-            Context.Logger.Info<PostMigrationMigration>("Post Migration Migration Code Ran");
+            Context.Logger.LogInformation("Post Migration Migration Code Ran");
             Context.AddPostMigration<RebuildSomething>();
-            Context.Logger.Info<PostMigrationMigration>("Post Migration Added");
+            Context.Logger.LogInformation("Post Migration Added");
         }
     }
 
     public class RebuildSomething : IMigration
     {
-        private readonly IProfilingLogger logger;
+        private readonly ILogger logger;
 
-        public RebuildSomething(IProfilingLogger logger)
+        public RebuildSomething(IMigrationContext context)
         {
-            this.logger = logger;
+            this.logger = context.Logger;
         }
 
         public void Migrate()
         {
-            logger.Info<RebuildSomething>("Post Migration Step Ran");
+            logger.LogInformation("Post Migration Step Ran");
         }
     }
 }

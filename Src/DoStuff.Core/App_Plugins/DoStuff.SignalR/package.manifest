@@ -1,6 +1,0 @@
-{
-  "javascript": [
-    "~/App_Plugins/DoStuff.SignalR/signalRHub.js",
-    "~/App_Plugins/DoStuff.SignalR/signalRService.js"
-  ]
-}

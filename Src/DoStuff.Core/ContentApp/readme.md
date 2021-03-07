@@ -1,9 +1,12 @@
 ﻿# ContentApp
 
+## Changes from v8 to NetCore
+> **Very few**: No changes to core classes.
+
+1. The `UriUtility` class is no longer static so if you use this to calculate where file paths are, you need to inject it. 
 
 ## ContentApp setup 
-You can setup a content app in two ways either via a package.manifest file or by 
-haveing a class that impliments IContentAppFactory (and is registered via a composer)
+You can setup a content app in two ways either via a package.manifest file or by having a class that implements IContentAppFactory (and is registered via a composer)
 
 you can control most things via the package.manifest file - registering via code 
 just gives you slightly more control over when or when not to include your app.

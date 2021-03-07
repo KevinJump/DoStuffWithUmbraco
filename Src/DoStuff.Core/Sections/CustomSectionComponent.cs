@@ -1,46 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Umbraco.Core.Composing;
-using Umbraco.Core.Logging;
-using Umbraco.Core.Services;
+
+using Microsoft.Extensions.Logging;
+
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Services;
 
 namespace DoStuff.Core.Sections
 {
-    /// <summary>
-    ///  Umbraco Component (runs at startup) 
-    /// </summary>
-    /// <remarks>This doesn't run unless it's registered in the Composer</remarks>
     public class CustomSectionComponent : IComponent
     {
-        private readonly IUserService userService;
-        private readonly IKeyValueService keyValueService;
-        private readonly IProfilingLogger logger;
+        private const string SetupKey = "doStuffSection_installed";
 
-        private const string setupKey = "doStuffSection_installed";
+        private ILogger<CustomSection> logger;
+        private IUserService userService;
+        private IKeyValueService keyValueService;
 
-        public CustomSectionComponent(
-            IUserService userService, 
+        public CustomSectionComponent(IUserService userService,
             IKeyValueService keyValueService,
-            IProfilingLogger  logger)
+            ILoggerFactory loggerFactory)
         {
+            logger = loggerFactory.CreateLogger<CustomSection>();
+
             this.userService = userService;
             this.keyValueService = keyValueService;
-            this.logger = logger;
         }
-
 
         public void Initialize()
         {
-            // a quick version of only run once. 
-            // for a more complete set of methods see Migrations samples
-            var installed = keyValueService.GetValue(setupKey);
+            // a quick once only run check 
+            // for a more complete example look at the migrations sample code.
+            var installed = keyValueService.GetValue(SetupKey);
             if (installed == null || installed != "installed")
             {
                 AddSection("admin", CustomSection.SectionAlias);
-                keyValueService.SetValue(setupKey, "installed");
+                keyValueService.SetValue(SetupKey, "installed");
             }
         }
 
@@ -56,25 +50,24 @@ namespace DoStuff.Core.Sections
         /// <param name="sectionAlias"></param>
         private void AddSection(string groupAlias, string sectionAlias)
         {
-            using (logger.DebugDuration<CustomSectionComponent>($"Adding Section {sectionAlias} to {groupAlias}"))
-            {
-                var group = userService.GetUserGroupByAlias(groupAlias);
-                if (group != null)
-                {
-                    if (!group.AllowedSections.Contains(sectionAlias))
-                    {
-                        group.AddAllowedSection(sectionAlias);
+            logger.LogDebug("Adding {section} to {group}", sectionAlias, groupAlias);
 
-                        try
-                        {
-                            userService.Save(group);
-                            logger.Info<CustomSectionComponent>($"Section {sectionAlias} added to {groupAlias} group");
-                        }
-                        catch (Exception ex)
-                        {
-                            logger.Warn<CustomSectionComponent>("Error adding section {0} to group {1} [{2}]",
-                                sectionAlias, groupAlias, ex.Message);
-                        }
+            var group = userService.GetUserGroupByAlias(groupAlias);
+            if (group != null)
+            {
+                if (!group.AllowedSections.Contains(sectionAlias))
+                {
+                    group.AddAllowedSection(sectionAlias);
+
+                    try
+                    {
+                        userService.Save(group);
+                        logger.LogInformation("Section {section} added to {group} group", sectionAlias, groupAlias);
+                    }
+                    catch (Exception ex)
+                    {
+                        logger.LogWarning(ex, "Error adding section {section} to group {group}",
+                            sectionAlias, groupAlias);
                     }
                 }
             }
@@ -82,7 +75,7 @@ namespace DoStuff.Core.Sections
 
         public void Terminate()
         {
-            // umbraco is shutting down -
+            // nothing to clean up
         }
     }
 }

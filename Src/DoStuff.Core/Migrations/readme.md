@@ -1,13 +1,32 @@
 ﻿# Migrations
 
-Umbraco Migrations allow you to control the struture of 
+Umbraco Migrations allow you to control the structure of 
 the database, create tables, columns, indexes, run custom SQL
-and genrally do everything you need to prep any custom 
+and generally do everything you need to prep any custom 
 stuff you might have in the Database. 
+
+## Changes from v8 to NetCore
+> **Minimal**: Namespaces and Execut method
+
+1. Namespaces have moved (remove and add new ones)
+2. Updater.Execute now takes `ILogger` and `ILoggerFactory`
+
+### v8:
+```cs
+var upgrader = new Upgrader(new DoStuffMigrationPlan());
+upgrader.Execute(scopeProvider, migrationBuilder, keyValueService, logger);
+```
+
+### NetCore:
+```cs
+var upgrader = new Upgrader(new DoStuffMigrationPlan());
+upgrader.Execute(scopeProvider, migrationBuilder, keyValueService, logger, loggerFactory);
+```
+----
 
 ## Migration Plan
 A Migration plan tells umbraco how to get from one state of 
-your application to another, in genral this will be how to 
+your application to another, in general this will be how to 
 install your app, create tables etc. but when you do upgrades
 it will also tell umbraco how to do them.
 
@@ -29,7 +48,7 @@ doesn't run there and then. instead it is bulked together
 by the Migration Runner and all ran together. 
 
 This is subtle but important, because if you add a migration
-and then immediatly think you can do something in code with the
+and then immediately think you can do something in code with the
 data - you can't 
 
 To manipulate the data from a migration use a post migration step.

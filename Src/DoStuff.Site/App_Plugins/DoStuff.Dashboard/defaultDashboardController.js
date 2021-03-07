@@ -13,7 +13,9 @@
     function defaultDashboardController($scope,
         notificationsService, Upload,
         umbRequestHelper,
-        doStuffHub, doStuffSignalRService) {
+        // doStuffHub, 
+        // doStuffSignalRService
+        ) {
 
         var vm = this;
 
@@ -95,7 +97,11 @@
         /////////////// SignalR 
         vm.message = '';
 
+        function setupHub() { console.log('signalR sample not yet done');}
+        function callAnEndPoint() { console.log('signalR sample not yet done');}
+
         // SignlaR - Initialization
+        /*
         function setupHub() {
 
             doStuffHub.initHub(function (hub) {
@@ -127,6 +133,7 @@
                 });
 
         }
+        */
 
 
     }

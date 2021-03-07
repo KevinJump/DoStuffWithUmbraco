@@ -1,9 +1,13 @@
-﻿@model dynamic
-@using Umbraco.Web.Composing
 @using Umbraco.Web.Templates
+@model dynamic
+@inject HtmlLocalLinkParser HtmlLocalLinkParser;
+@inject HtmlUrlParser HtmlUrlParser;
+@inject HtmlImageSourceParser HtmlImageSourceParser;
+
 @{
-    var value = TemplateUtilities.ParseInternalLinks(Model.value.ToString(), Current.UmbracoContext.UrlProvider);
-    value = TemplateUtilities.ResolveUrlsFromTextString(value);
-    value = TemplateUtilities.ResolveMediaFromTextString(value);
+
+    var value = HtmlLocalLinkParser.EnsureInternalLinks(Model.value.ToString());
+    value = HtmlUrlParser.EnsureUrls(value);
+    value = HtmlImageSourceParser.EnsureImageSources(value);
 }
 @Html.Raw(value)

@@ -1,10 +1,7 @@
-﻿using DoStuff.Core.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Umbraco.Core.Migrations;
+﻿
+using DoStuff.Core.Models;
+
+using Umbraco.Cms.Infrastructure.Migrations;
 
 namespace DoStuff.Core.Migrations
 {

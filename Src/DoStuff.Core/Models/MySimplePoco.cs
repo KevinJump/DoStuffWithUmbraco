@@ -1,11 +1,8 @@
-﻿using NPoco;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Umbraco.Core.Persistence.DatabaseAnnotations;
-using Umbraco.Core.Persistence.DatabaseModelDefinitions;
+﻿using System;
+
+using NPoco;
+
+using Umbraco.Cms.Infrastructure.Persistence.DatabaseAnnotations;
 
 namespace DoStuff.Core.Models
 {

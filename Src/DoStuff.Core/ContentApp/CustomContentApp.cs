@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Umbraco.Core;
-using Umbraco.Core.Composing;
-using Umbraco.Core.Models;
-using Umbraco.Core.Models.ContentEditing;
-using Umbraco.Core.Models.Membership;
-using Umbraco.Web;
+
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Models.ContentEditing;
+using Umbraco.Cms.Core.Models.Membership;
+using Umbraco.Cms.Core.Routing;
+using Umbraco.Extensions;
 
 namespace DoStuff.Core
 {
@@ -24,7 +23,7 @@ namespace DoStuff.Core
     {
         // plugin base, doing this means it works when umbraco isn't installed
         // in the root 
-        private static string PluginBase = UriUtility.ToAbsolute($"/App_Plugins/DoStuff.ContentApp/");
+        private static string PluginBase = "/App_Plugins/DoStuff.ContentApp/";
 
 
         internal const string Alias = "customContentApp";
@@ -38,14 +37,21 @@ namespace DoStuff.Core
     /// </summary>
     public class CustomContentAppComposer : IUserComposer
     {
-        public void Compose(Composition composition)
+        public void Compose(IUmbracoBuilder builder)
         {
-            composition.ContentApps().Append<CustomContentApp>();
+            builder.ContentApps().Append<CustomContentApp>();
         }
     }
 
     public class CustomContentApp : IContentAppFactory
     {
+        private readonly string _contentAppView;
+
+        public CustomContentApp(UriUtility uriUtility)
+        {
+            _contentAppView = uriUtility.ToAbsolute(CustomContentAppConstants.AppView);
+        }
+
         public ContentApp GetContentAppFor(object source, IEnumerable<IReadOnlyUserGroup> userGroups)
         {
             if (source is IContent content)
@@ -59,7 +65,7 @@ namespace DoStuff.Core
                         Alias = CustomContentAppConstants.Alias,
                         Name = CustomContentAppConstants.Name,
                         Icon = CustomContentAppConstants.Icon,
-                        View = CustomContentAppConstants.AppView
+                        View = _contentAppView
                     };
                 }
             }

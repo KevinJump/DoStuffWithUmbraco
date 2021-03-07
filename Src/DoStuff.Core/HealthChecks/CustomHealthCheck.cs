@@ -1,32 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Umbraco.Core.Composing;
-using Umbraco.Web;
-using Umbraco.Web.HealthCheck;
 
-namespace DoStuff.Core
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.HealthChecks;
+using Umbraco.Extensions;
+
+namespace DoStuff.Core.HealthChecks
 {
     /// <summary>
-    /// Register the healthcheck 
+    ///  Register the health check
     /// </summary>
     public class CustomHealthCheckComposer : IUserComposer
     {
-        public void Compose(Composition composition)
+        public void Compose(IUmbracoBuilder builder)
         {
-            composition.HealthChecks().Add<CustomHealthCheck>();
+            builder.HealthChecks().Add<CustomHealthCheck>();
         }
     }
 
     /// <summary>
-    ///  Simple health check, that counts to 100 - because it can
+    ///  simple heath check - counts to 100, because it can.
     /// </summary>
     [HealthCheck("D5ADD41C-E9E9-434B-832D-282B237366C2",
-        "Custom Health Checks", 
-        Description = "Some Custom Health Checks",
-        Group = "DoStuff Checks")]
+           "Custom Health Checks",
+           Description = "Some Custom Health Checks",
+           Group = "DoStuff Checks")]
     public class CustomHealthCheck : HealthCheck
     {
         public CustomHealthCheck()
@@ -35,7 +34,7 @@ namespace DoStuff.Core
 
         public override HealthCheckStatus ExecuteAction(HealthCheckAction action)
         {
-            switch(action.Alias)
+            switch (action.Alias)
             {
                 case "count":
                     return ExecuteCount();
@@ -44,9 +43,9 @@ namespace DoStuff.Core
             return null;
         }
 
-        public override IEnumerable<HealthCheckStatus> GetStatus()
+        public override Task<IEnumerable<HealthCheckStatus>> GetStatus()
         {
-            yield return GetCountStatus();
+            return Task.FromResult(GetCountStatus().AsEnumerableOfOne());
         }
 
         /// 
@@ -56,7 +55,7 @@ namespace DoStuff.Core
 
             return new HealthCheckStatus("We haven't counted yet")
             {
-               
+
                 ResultType = StatusResultType.Warning,
                 Description = "We like to count to 100",
                 Actions = new List<HealthCheckAction>()
@@ -72,7 +71,7 @@ namespace DoStuff.Core
         private HealthCheckStatus ExecuteCount()
         {
             // this is where you do the things to fix your check 
-            for(int i = 0; i < 100; i++)
+            for (int i = 0; i < 100; i++)
             {
                 //counting...
             }

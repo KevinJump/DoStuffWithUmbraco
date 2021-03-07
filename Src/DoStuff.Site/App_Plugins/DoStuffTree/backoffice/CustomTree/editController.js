@@ -12,10 +12,10 @@
         };
 
         // functions
-        vm.save = save; 
+        vm.save = save;
 
         // startup
-        init($routeParams.id); 
+        init($routeParams.id);
 
         /////////////
         function save() {
@@ -30,7 +30,7 @@
 
 
             // do things you want to happen first
-            vm.loading = false; 
+            vm.loading = false;
         }
 
     }

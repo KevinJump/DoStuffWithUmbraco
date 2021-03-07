@@ -1,39 +1,37 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Web.Http;
-using DoStuff.Core.RepoPattern.Models;
-using DoStuff.Core.RepoPattern.Services;
-using Umbraco.Web.WebApi;
+using System.Text;
+using System.Threading.Tasks;
+
+using DoStuff.Core.Configuration;
+using DoStuff.Core.Services;
+
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+
+using Umbraco.Cms.Web.BackOffice.Controllers;
 
 namespace DoStuff.Core.Controllers
 {
-
-    //~/umbraco/backoffice/api/dostuffapi/getapi
-
     public class DoStuffApiController : UmbracoAuthorizedApiController
     {
-        private MyListService _myListService;
+        private readonly DoStuffOptions _options;
+        private readonly DoStuffService _doStuffService;
 
-        public DoStuffApiController(MyListService myListService)
+        public DoStuffApiController(IOptions<DoStuffOptions> options,
+            DoStuffService doStuffService)
         {
-            _myListService = myListService;
+            _options = options.Value;
+            _doStuffService = doStuffService;
         }
 
-        /// <summary>
-        ///  simple call, used to locate the controller
-        ///  when we inject it into the javascript variables.
-        /// </summary>
-        /// <returns></returns>
         [HttpGet]
-        public string GetApi() => "Hello we are doing stuff.";
+        public int GetMagicNumber() => _options.MagicNumber;
 
-        /// <summary>
-        /// simple example of using the injected service
-        /// </summary>
-        /// <returns></returns>
         [HttpGet]
-        public List<MyList> GetLists() => _myListService.GetAll().ToList();
-
+        // /umbraco/backoffice/api/dostuffapi/IsBiggerThanMagic?number=x
+        public bool IsBiggerThanMagic(int number)
+            => _doStuffService.IsHigherThanMagicNumber(number);
     }
-
 }

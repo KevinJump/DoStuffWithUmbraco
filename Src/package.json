@@ -1,13 +1,15 @@
 {
-  "name": "dostuffwithumbraco",
-  "version": "8.1.1",
-  "description": "Collection of things to do with umbraco",
-  "main": "index.js",
+  "name": "usync.sitemanager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "private": "true",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "gulp": "^4.0.2"
   }

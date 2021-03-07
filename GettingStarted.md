@@ -1,16 +1,25 @@
 ## Getting Started
-The project should be self contained - if you follow the first
-time steps below you will get a project and site. :
+Getting started with the NetCore build requires you are using the latest nightly builds.
+
+You will need to add the nightly nuget feed to your list of sources 
+
+```
+dotnet nuget add source "https://www.myget.org/F/umbraconightly/api/v3/index.json" -n "Umbraco Nightly"
+```
 
 ### First Time.
-- Clean the Web.Config 
-  - Blank the `Umbraco.Core.ConfigurationStatus` setting in AppSettings
-  - Remove the UmbracoDSN Connection string
+Clean the appSettings.json by Removing 'ConnectionString' section from the file
 
-- Install Umbraco 
-  - Run the Umbraco Install, pick a username, and db type
-  - you don't have to (shouldn't) install a starter kit
+### Build 
+```
+Dotnet build
+```
   
-- Run uSync Import
-  - from the uSync menu in settings run an import this will bring everything into the project
-
+### Run
+```
+Dotnet Run
+```
+  
+## Install
+- you will need a blank SQL Database (not SQLCE)
+- install following the prompts enter db details when required.
