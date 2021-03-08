@@ -24,16 +24,16 @@ public MySampleService {
 ## Logging in NetCore
 > See this in [DoStuff.Core/Services/DoStuffService.cs](../src/DoStuff.Core/Services/DoStuffService.cs)
 
-in UniCore you now inject the ILoggerFactory and create the logger to then call it.
+in UniCore you now inject the ILogger typed to your service/class and create the logger to then call it.
 
 ```cs
 public MySampleService {
 
     private readonly ILogger<MySampleService> _logger; 
 
-    public MySampleService(ILoggerFactory loggerFactory)
+    public MySampleService(ILogger<MySampleService> logger)
     {
-            _logger = loggerFactory.CreateLogger<MySampleService>();
+        _logger = logger;
     }
 
     public bool SomeSampleMethod(int number) 
