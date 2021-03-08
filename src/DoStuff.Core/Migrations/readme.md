@@ -10,6 +10,7 @@ stuff you might have in the Database.
 
 1. Namespaces have moved (remove and add new ones)
 2. Updater.Execute now takes `ILogger` and `ILoggerFactory`
+3. Updater is now called from within a `INotificationHandler<UmbracoApplicationStarting>` class, so we can check runtime level. 
 
 ### v8:
 ```cs

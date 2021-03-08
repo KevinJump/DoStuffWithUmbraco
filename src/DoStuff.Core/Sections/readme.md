@@ -6,7 +6,9 @@ The Umbraco Backoffice is split into sections, such as content, media, settings 
 > **Very few** : NetCore code is very similar to v8.
 
 ### Changes:
-1. Composer now uses `IUmbracoBuilder` object to register section and component.
+1. Composer now uses `IUmbracoBuilder` object to register section
+2. `INotificationHandler<UmbracoApplicationStarting>` is used in place of Compotent to add section to admin group.
+
 
 # See Also 
 

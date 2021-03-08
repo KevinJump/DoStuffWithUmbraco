@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Events;
 
 namespace DoStuff.Core.Sections
 {
@@ -13,7 +14,7 @@ namespace DoStuff.Core.Sections
         {
             builder.Sections().Append<CustomSection>();
 
-            builder.Components().Append<CustomSectionComponent>();
+            builder.AddNotificationHandler<UmbracoApplicationStarting, CustomSectionAppStartingHandler>();
         }
     }
 }

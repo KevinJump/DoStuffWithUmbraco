@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Logging;
 
 using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Scoping;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Migrations;
@@ -10,12 +12,17 @@ using Umbraco.Cms.Infrastructure.Migrations.Upgrade;
 namespace DoStuff.Core.Migrations
 {
     /// <summary>
-    ///  short hand composer if you are just registering a component 
+    ///  Register an event handler, so we can do stuff when the site starts.
     /// </summary>
-    public class MigrationComponentComposer : ComponentComposer<MigrationComponent>, IUserComposer
-    { }
+    public class MigrationComponentComposer : IUserComposer
+    {
+        public void Compose(IUmbracoBuilder builder)
+        {
+            builder.AddNotificationHandler<UmbracoApplicationStarting, MigrationAppStartingHandler>();
+        }
+    }
 
-    public class MigrationComponent : IComponent
+    public class MigrationAppStartingHandler : INotificationHandler<UmbracoApplicationStarting>
     {
         private readonly IScopeProvider scopeProvider;
         private readonly IMigrationBuilder migrationBuilder;
@@ -24,7 +31,7 @@ namespace DoStuff.Core.Migrations
         private readonly ILoggerFactory loggerFactory;
         private readonly ILogger<Upgrader> logger;
 
-        public MigrationComponent(
+        public MigrationAppStartingHandler(
             IScopeProvider scopeProvider,
             IMigrationBuilder migrationBuilder,
             IKeyValueService keyValueService,
@@ -37,16 +44,14 @@ namespace DoStuff.Core.Migrations
             this.logger = loggerFactory.CreateLogger<Upgrader>();
         }
 
-        public void Initialize()
+        public void Handle(UmbracoApplicationStarting notification)
         {
-            // register and run our migration plan 
-            var upgrader = new Upgrader(new DoStuffMigrationPlan());
-            upgrader.Execute(scopeProvider, migrationBuilder, keyValueService, logger, loggerFactory);
-        }
-
-        public void Terminate()
-        {
-            // umbraco closing down
+            if (notification.RuntimeLevel >= Umbraco.Cms.Core.RuntimeLevel.Run)
+            {
+                // register and run our migration plan 
+                var upgrader = new Upgrader(new DoStuffMigrationPlan());
+                upgrader.Execute(scopeProvider, migrationBuilder, keyValueService, logger, loggerFactory);
+            }
         }
     }
 }

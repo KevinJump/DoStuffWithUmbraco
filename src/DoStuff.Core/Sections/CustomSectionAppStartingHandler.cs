@@ -3,38 +3,41 @@ using System.Linq;
 
 using Microsoft.Extensions.Logging;
 
-using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Services;
 
 namespace DoStuff.Core.Sections
 {
-    public class CustomSectionComponent : IComponent
+    public class CustomSectionAppStartingHandler : INotificationHandler<UmbracoApplicationStarting>
     {
         private const string SetupKey = "doStuffSection_installed";
 
-        private ILogger<CustomSection> logger;
-        private IUserService userService;
-        private IKeyValueService keyValueService;
+        private readonly ILogger<CustomSectionAppStartingHandler> logger;
+        private readonly IUserService userService;
+        private readonly IKeyValueService keyValueService;
 
-        public CustomSectionComponent(IUserService userService,
+        public CustomSectionAppStartingHandler(
+            ILogger<CustomSectionAppStartingHandler> logger,
             IKeyValueService keyValueService,
-            ILoggerFactory loggerFactory)
+            IUserService userService
+            )
         {
-            logger = loggerFactory.CreateLogger<CustomSection>();
-
-            this.userService = userService;
+            this.logger = logger;
             this.keyValueService = keyValueService;
+            this.userService = userService;
         }
 
-        public void Initialize()
+        public void Handle(UmbracoApplicationStarting notification)
         {
-            // a quick once only run check 
-            // for a more complete example look at the migrations sample code.
-            var installed = keyValueService.GetValue(SetupKey);
-            if (installed == null || installed != "installed")
+            if (notification.RuntimeLevel >= Umbraco.Cms.Core.RuntimeLevel.Run)
             {
-                AddSection("admin", CustomSection.SectionAlias);
-                keyValueService.SetValue(SetupKey, "installed");
+                var installed = keyValueService.GetValue(SetupKey);
+                if (installed != null && installed != "installed")
+                {
+                    AddSection(Constants.Security.AdminGroupAlias, CustomSection.SectionAlias);
+                    keyValueService.SetValue(SetupKey, "installed");
+                }
             }
         }
 
@@ -73,9 +76,6 @@ namespace DoStuff.Core.Sections
             }
         }
 
-        public void Terminate()
-        {
-            // nothing to clean up
-        }
+
     }
 }

@@ -20,9 +20,9 @@ namespace DoStuff.Core.Services
         private readonly ILogger<DoStuffService> _logger;
         private readonly DoStuffOptions _options;
 
-        public DoStuffService(ILoggerFactory loggerFactory, IOptions<DoStuffOptions> options)
+        public DoStuffService(ILogger<DoStuffService> logger, IOptions<DoStuffOptions> options)
         {
-            _logger = loggerFactory.CreateLogger<DoStuffService>();
+            _logger = logger;
             _options = options.Value;
         }
 

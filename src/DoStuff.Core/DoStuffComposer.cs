@@ -19,12 +19,11 @@ namespace DoStuff.Core
             // Add Options 
             builder.Services.Configure<DoStuffOptions>(builder.Config.GetSection(DoStuffOptions.DoStuffSection));
 
-            // Add Event handlers
-            builder.AddNotificationHandler<ServerVariablesParsing, DoStuffServerVariablesNotifcationHandler>();
-
             // Add services
             builder.Services.AddUnique<DoStuffService>();
 
+            // Add Event handlers
+            builder.AddNotificationHandler<ServerVariablesParsing, DoStuffServerVariablesNotifcationHandler>();
         }
     }
 }
