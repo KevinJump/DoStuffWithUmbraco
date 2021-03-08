@@ -1,9 +1,9 @@
 # Composing
 In Umbraco 8 composing is how you get your services, dashboards, components and other things into Umbraco in a way that can then be used for things like Dependency Injection. 
 
-In the NetCore version of umbraco this hasn't changed a lot, but there are some subtle differences.
+In NetCore composing is still there, but now there are diffrent options when it comes to running items at statup.
 
-Composing is now passed an `IUmbracoBuilder` interface provides access to services, configuration and logging at startup time. 
+### 1. Composing is now passed an `IUmbracoBuilder` interface provides access to services, configuration and logging at startup time. 
 
 ## Composing in v8
 
@@ -67,3 +67,41 @@ e.g:
 [ComposeBefore(typeof(MyComposerThanNeedsThis))]
 public class DoStuffComposer : IUserComposer 
 ```
+
+
+## Composing and Runtime level in Netcore
+you can no longer limit a composer by runtime level in netcore.
+
+e.g in v8 you would do. 
+```cs
+[RuntimeLevel(MinLevel = RuntimeLevel.Run)]
+public class MyComposer : IComposer {
+    ...
+}
+```
+
+But you cannot do this in NetCore. instead you should use the `INotificationHandler` pattern to run things when umbraco starts up. at this point you can check runtime level.
+
+e.g in NetCore.
+```cs
+public class MyCustomComposer : IUserComposer
+{
+    public void Compose(IUmbracoBuilder builder)
+    {
+        builder.AddNotificationHandler<UmbracoApplicationStarting, MyCustomAppStartingHandler>();
+    }
+}
+
+public class CustomSectionAppStartingHandler : INotificationHandler<UmbracoApplicationStarting>
+{
+    public void Handle(UmbracoApplicationStarting notification)
+    {
+        if (notification.RuntimeLevel >= RuntimeLevel.Run) 
+        {
+            /// do stuff here and umbraco is running (not installing or updating)
+        }
+    }
+}
+
+```
+
