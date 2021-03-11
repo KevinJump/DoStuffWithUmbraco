@@ -64,7 +64,10 @@ you can also register for multiple events within the same method:
 this is how ModelsBuilder registers for two events within the core: 
 
 ```cs
+builder.AddNotificationHandler<UmbracoApplicationStarting, ModelsBuilderNotificationHandler>();
 builder.AddNotificationHandler<ServerVariablesParsing, ModelsBuilderNotificationHandler>();
+builder.AddNotificationHandler<ModelBindingError, ModelsBuilderNotificationHandler>();
+
 ```
 
 and the class impliments both handlers. 
