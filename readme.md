@@ -26,7 +26,7 @@ Quick examples of how to do things. We will first replicate the same snippets th
 - [x] [ContentApp](./src/DoStuff.Core/ContentApp/)
 - [x] [Dashboard](./src/DoStuff.Core/App_Plugins/DoStuff.Dashboard/)
 - [x] [HealthChecks](./src/DoStuff.Core/HealthChecks/)
-- [ ] Background Task
+- [ ] Background Task (./src/DoStuff.Core/Background/)
 - [ ] File upload
 - [ ] File Download
 - [ ] SignalR 
