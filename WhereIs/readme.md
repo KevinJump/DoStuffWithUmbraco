@@ -10,3 +10,4 @@ A collection of quick notes as to how things have changed between Umbraco v8 and
 - [Logging](logging.md)
 - [Compsitions](composing.md)
 - [Options/Config](options.md)
+- [Events](events.md)
