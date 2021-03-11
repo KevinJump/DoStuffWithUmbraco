@@ -16,7 +16,11 @@ As Umbraco NetCore development evolves things will change, and stuff may move ab
 As we work through examples, we hope to write some 'if you use to do x now do y' type examples:
 
 - [WhereIs X ?](WhereIs/readme.md)
-
+    - [Logging](WhereIs/logging.md)
+    - [Compsitions](WhereIs/composing.md)
+    - [Options/Config](WhereIs/options.md)
+    - [Events](WhereIs/events.md)
+    
 # Snippets
 Quick examples of how to do things. We will first replicate the same snippets that live in the [DoStuffInUmbraco](https://github.com/KevinJump/DoStuffWithUmbraco/tree/v8) repo
 
