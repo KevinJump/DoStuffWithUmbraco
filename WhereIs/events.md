@@ -1,4 +1,4 @@
-## Events
+# Events
 > Work in progress - events are still being moved in NetCore
 
 Events in NetCore have changed quite a bit. withing Umbraco8 you would attach a method to the event delegate to get notified when things happen. 
@@ -13,6 +13,8 @@ this makes event subscription quite different (but a little easier and cleaner.)
 
 ## Notifications in NetCore
 
+
+### Register Notification Handler for events.
 NotificationHandlers are registered within a composer:
 
 ```cs
@@ -25,6 +27,8 @@ public class DoStuffComposer : IUserComposer
     }
 }
 ```
+
+### Implementing INotificationHandler to process event.
 
 Your notification handler can then be separated into its own class and file. (see [DoStuffServerVariablesNotifcationHandler.cs](../src/Events/DoStuffServerVariablesNotifcationHandler.cs]))
 
@@ -59,9 +63,14 @@ Your notification handler can then be separated into its own class and file. (se
     }
 ```
 
-you can also register for multiple events within the same method: 
+**This means that for the most common uses you will no longer need a component to register for events as it can be done in the composer, streamlining the code.**
 
-this is how ModelsBuilder registers for two events within the core: 
+---
+### Registering for multiple events in once class.
+
+You can also register for multiple events within the same method: 
+
+This is how ModelsBuilder registers for two events within the core: 
 
 ```cs
 builder.AddNotificationHandler<UmbracoApplicationStarting, ModelsBuilderNotificationHandler>();
