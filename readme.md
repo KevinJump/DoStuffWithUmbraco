@@ -20,7 +20,7 @@ As we work through examples, we hope to write some 'if you use to do x now do y'
     - [Compsitions](WhereIs/composing.md)
     - [Options/Config](WhereIs/options.md)
     - [Events](WhereIs/events.md)
-    
+
 # Snippets
 Quick examples of how to do things. We will first replicate the same snippets that live in the [DoStuffInUmbraco](https://github.com/KevinJump/DoStuffWithUmbraco/tree/v8) repo
 
@@ -30,7 +30,7 @@ Quick examples of how to do things. We will first replicate the same snippets th
 - [x] [ContentApp](./src/DoStuff.Core/ContentApp/)
 - [x] [Dashboard](./src/DoStuff.Core/App_Plugins/DoStuff.Dashboard/)
 - [x] [HealthChecks](./src/DoStuff.Core/HealthChecks/)
-- [ ] [Background Task] (./src/DoStuff.Core/Background/)
+- [ ] [Background Task](./src/DoStuff.Core/Background/)
 - [ ] File upload
 - [ ] File Download
 - [ ] SignalR 
