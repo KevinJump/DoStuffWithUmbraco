@@ -17,7 +17,7 @@ As we work through examples, we hope to write some 'if you use to do x now do y'
 
 - [WhereIs X ?](WhereIs/readme.md)
     - [Logging](WhereIs/logging.md)
-    - [Compsitions](WhereIs/composing.md)
+    - [Compositions](WhereIs/composing.md)
     - [Options/Config](WhereIs/options.md)
     - [Events](WhereIs/events.md)
 
