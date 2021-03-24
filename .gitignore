@@ -5,6 +5,7 @@
 
 # Umbraco bits.
 [Uu]mbraco/
+**/App_Data/TEMP/
 
 # User-specific files
 *.rsuser

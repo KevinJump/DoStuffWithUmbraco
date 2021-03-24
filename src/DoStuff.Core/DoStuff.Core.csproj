@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Umbraco.Cms.Web" Version="9.0.0-beta001.20210310.11" />
-  </ItemGroup>
+		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="9.0.0-alpha004" />
+	</ItemGroup>
 
 </Project>
