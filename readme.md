@@ -1,4 +1,4 @@
-> Current Umbraco Build : Nightly 9.0.0-beta001.20210307.3
+> Current Umbraco Build : Alpha 4 - `9.0.0-alpha004`
 
 **⚠ This is a work in progress, information nearly right at time of going to press etc.**
 

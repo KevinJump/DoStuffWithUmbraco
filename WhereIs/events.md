@@ -79,7 +79,7 @@ builder.AddNotificationHandler<ModelBindingError, ModelsBuilderNotificationHandl
 
 ```
 
-and the class impliments both handlers. 
+and the class implements both handlers. 
 
 ```cs
 internal class ModelsBuilderNotificationHandler : INotificationHandler<UmbracoApplicationStarting>, INotificationHandler<ServerVariablesParsing>, INotificationHandler<ModelBindingError> {
