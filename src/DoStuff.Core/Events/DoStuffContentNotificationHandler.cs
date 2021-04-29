@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Services.Notifications;
 
 namespace DoStuff.Core.Events
 {
-    class DoStuffContentNotificationHandler
+    public class DoStuffContentNotificationHandler : INotificationHandler<ContentSavedNotification>
     {
+        public void Handle(ContentSavedNotification notification)
+        {
+            foreach(var item in notification.SavedEntities)
+            {
+                // handle saved content here.
+            }
+        }
     }
 }

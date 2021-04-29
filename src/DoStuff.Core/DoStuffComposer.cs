@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Services.Notifications;
 using Umbraco.Cms.Infrastructure.WebAssets;
 using Umbraco.Extensions;
 
@@ -24,6 +25,7 @@ namespace DoStuff.Core
 
             // Add Event handlers
             builder.AddNotificationHandler<ServerVariablesParsing, DoStuffServerVariablesNotifcationHandler>();
+            builder.AddNotificationHandler<ContentSavedNotification, DoStuffContentNotificationHandler>(); 
         }
     }
 }
