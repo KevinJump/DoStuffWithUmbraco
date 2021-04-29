@@ -1,7 +1,7 @@
 # Composing
 In Umbraco 8 composing is how you get your services, dashboards, components and other things into Umbraco in a way that can then be used for things like Dependency Injection. 
 
-In NetCore composing is still there, but now there are diffrent options when it comes to running items at statup.
+In NetCore composing is still there, but now there are different options when it comes to running items at startup.
 
 ### 1. Composing is now passed an `IUmbracoBuilder` interface provides access to services, configuration and logging at startup time. 
 
