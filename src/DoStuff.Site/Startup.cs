@@ -1,4 +1,5 @@
 using System;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -60,9 +61,18 @@ namespace DoStuff.Site
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseUmbraco();
-            app.UseUmbracoBackOffice();
-            app.UseUmbracoWebsite();
+            app.UseUmbraco()
+                .WithMiddleware(u =>
+                {
+                    u.WithBackOffice();
+                    u.WithWebsite();
+                })
+                .WithEndpoints(u =>
+                {
+                    u.UseInstallerEndpoints();
+                    u.UseBackOfficeEndpoints();
+                    u.UseWebsiteEndpoints();
+                });
         }
     }
 }
