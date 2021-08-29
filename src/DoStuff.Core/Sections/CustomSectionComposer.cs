@@ -1,10 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Notifications;
 
 namespace DoStuff.Core.Sections
 {
@@ -14,7 +11,7 @@ namespace DoStuff.Core.Sections
         {
             builder.Sections().Append<CustomSection>();
 
-            builder.AddNotificationHandler<UmbracoApplicationStarting, CustomSectionAppStartingHandler>();
+            builder.AddNotificationHandler<UmbracoApplicationStartingNotification, CustomSectionAppStartingHandler>();
         }
     }
 }

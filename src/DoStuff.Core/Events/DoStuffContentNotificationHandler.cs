@@ -1,6 +1,6 @@
 ﻿
 using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Core.Services.Notifications;
+using Umbraco.Cms.Core.Notifications;
 
 namespace DoStuff.Core.Events
 {

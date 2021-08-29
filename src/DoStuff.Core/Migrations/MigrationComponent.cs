@@ -4,6 +4,8 @@ using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Migrations;
+using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Core.Scoping;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Migrations;
@@ -18,39 +20,34 @@ namespace DoStuff.Core.Migrations
     {
         public void Compose(IUmbracoBuilder builder)
         {
-            builder.AddNotificationHandler<UmbracoApplicationStarting, MigrationAppStartingHandler>();
+            builder.AddNotificationHandler<UmbracoApplicationStartingNotification, MigrationAppStartingHandler>();
         }
     }
 
-    public class MigrationAppStartingHandler : INotificationHandler<UmbracoApplicationStarting>
+    public class MigrationAppStartingHandler : INotificationHandler<UmbracoApplicationStartingNotification>
     {
-        private readonly IScopeProvider scopeProvider;
-        private readonly IMigrationBuilder migrationBuilder;
-        private readonly IKeyValueService keyValueService;
+        private readonly IScopeProvider _scopeProvider;
+        private readonly IKeyValueService _keyValueService;
+        private readonly IMigrationPlanExecutor _migrationPlanExecutor;
 
-        private readonly ILoggerFactory loggerFactory;
-        private readonly ILogger<Upgrader> logger;
 
         public MigrationAppStartingHandler(
             IScopeProvider scopeProvider,
-            IMigrationBuilder migrationBuilder,
             IKeyValueService keyValueService,
-            ILoggerFactory loggerFactory)
-        {
-            this.scopeProvider = scopeProvider;
-            this.migrationBuilder = migrationBuilder;
-            this.keyValueService = keyValueService;
-            this.loggerFactory = loggerFactory;
-            this.logger = loggerFactory.CreateLogger<Upgrader>();
+            IMigrationPlanExecutor migrationPlanExecutor)
+        { 
+            _scopeProvider = scopeProvider;
+            _keyValueService = keyValueService;
+            _migrationPlanExecutor = migrationPlanExecutor;
         }
 
-        public void Handle(UmbracoApplicationStarting notification)
+        public void Handle(UmbracoApplicationStartingNotification notification)
         {
             if (notification.RuntimeLevel >= Umbraco.Cms.Core.RuntimeLevel.Run)
             {
                 // register and run our migration plan 
                 var upgrader = new Upgrader(new DoStuffMigrationPlan());
-                upgrader.Execute(scopeProvider, migrationBuilder, keyValueService, logger, loggerFactory);
+                upgrader.Execute(_migrationPlanExecutor, _scopeProvider, _keyValueService);
             }
         }
     }

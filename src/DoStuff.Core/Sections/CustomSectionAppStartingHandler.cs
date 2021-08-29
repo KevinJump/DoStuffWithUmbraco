@@ -5,11 +5,12 @@ using Microsoft.Extensions.Logging;
 
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Core.Services;
 
 namespace DoStuff.Core.Sections
 {
-    public class CustomSectionAppStartingHandler : INotificationHandler<UmbracoApplicationStarting>
+    public class CustomSectionAppStartingHandler : INotificationHandler<UmbracoApplicationStartingNotification>
     {
         private const string SetupKey = "doStuffSection_installed";
 
@@ -28,7 +29,7 @@ namespace DoStuff.Core.Sections
             this.userService = userService;
         }
 
-        public void Handle(UmbracoApplicationStarting notification)
+        public void Handle(UmbracoApplicationStartingNotification notification)
         {
             if (notification.RuntimeLevel >= Umbraco.Cms.Core.RuntimeLevel.Run)
             {

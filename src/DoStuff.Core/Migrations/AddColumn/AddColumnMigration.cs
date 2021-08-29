@@ -10,7 +10,7 @@ namespace DoStuff.Core.Migrations
         {
         }
 
-        public override void Migrate()
+        protected override void Migrate()
         {
         
             if (TableExists(DoStuff.Tables.MySimpleTable))

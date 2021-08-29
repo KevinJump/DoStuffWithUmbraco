@@ -1,11 +1,9 @@
 using System;
-
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
 
@@ -54,9 +52,9 @@ namespace DoStuff.Site
         /// <summary>
         /// Configures the application
         /// </summary>
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (_env.IsDevelopment())
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
@@ -64,8 +62,8 @@ namespace DoStuff.Site
             app.UseUmbraco()
                 .WithMiddleware(u =>
                 {
-                    u.WithBackOffice();
-                    u.WithWebsite();
+                    u.UseBackOffice();
+                    u.UseWebsite();
                 })
                 .WithEndpoints(u =>
                 {

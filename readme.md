@@ -1,6 +1,6 @@
-> Current Umbraco Build : Beta 1 - `9.0.0-beta001`
+> Current Umbraco Build : Beta 1 - `9.0.0-rc002`
 
-**⚠ This repo is a couple of beta releases behind the Umbraco release schedule, as such some things in here have changed - updates are coming but for now do check against latests betas that things still work**
+**⚠ This repo is running v9.0.0-rc2, it compiles, and we have caught the breaking changes, but we still need to work through places where the logic might have changed - so keep an eye out for that**
 
 # DoStuffWithUmbraco "NetCore" Version
 

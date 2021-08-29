@@ -34,8 +34,7 @@ namespace DoStuff.Core.Migrations
                 .To<CreateTableMigration>("SimpleTable-Created")
                 .To<AddColumnMigration>("NewColumn-Added")
                 .To<AddIndexToTableMigration>("NewIndex-Added")
-                .To<ExecuteSqlMigration>("CustomSql-Ran")
-                .To<PostMigrationMigration>("PostMigrationStep-Ran");
+                .To<ExecuteSqlMigration>("CustomSql-Ran");
         }
     }
 }
