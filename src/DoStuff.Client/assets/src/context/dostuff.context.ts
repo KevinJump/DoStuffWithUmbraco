@@ -5,6 +5,7 @@ import { UmbStringState } from "@umbraco-cms/backoffice/observable-api";
 import { UMB_AUTH_CONTEXT } from '@umbraco-cms/backoffice/auth'
 import { UmbContextToken } from "@umbraco-cms/backoffice/context-api";
 import { DoStuffRepository } from "../repository/dostuff.repository";
+import { OpenAPI } from "../api";
 
 export class DoStuffContext extends UmbBaseController {
 
@@ -20,8 +21,8 @@ export class DoStuffContext extends UmbBaseController {
         this.provideContext(DOSTUFF_CONTEXT_TOKEN, this);
 
         this.consumeContext(UMB_AUTH_CONTEXT, (_auth) => {
-        //    OpenAPI.TOKEN = () => _auth.getLatestToken();
-        //    OpenAPI.WITH_CREDENTIALS = true;
+            OpenAPI.TOKEN = () => _auth.getLatestToken();
+            OpenAPI.WITH_CREDENTIALS = true;
         });
     }
 

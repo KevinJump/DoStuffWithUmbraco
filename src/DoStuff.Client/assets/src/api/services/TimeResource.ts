@@ -12,7 +12,7 @@ export class TimeResource {
      * @returns string Success
      * @throws ApiError
      */
-    public static getUmbracoDoStuffApiV1Date(): CancelablePromise<string> {
+    public static getDate(): CancelablePromise<string> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/doStuff/api/v1/date',
@@ -23,7 +23,7 @@ export class TimeResource {
      * @returns string Success
      * @throws ApiError
      */
-    public static getUmbracoDoStuffApiV1Time(): CancelablePromise<string> {
+    public static getTime(): CancelablePromise<string> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/doStuff/api/v1/time',

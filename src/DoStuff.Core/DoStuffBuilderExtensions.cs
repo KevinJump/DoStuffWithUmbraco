@@ -30,6 +30,10 @@ internal class ConfigureSwaggerGenOptions : IConfigureOptions<SwaggerGenOptions>
                 Version = "Latest",
                 Description = "Example controllers from the DoStuff library"
             });
+
+        // sets the operation Ids to be the same as the action
+        // so it loses all the v1... bits to the names.
+        options.CustomOperationIds(e => $"{e.ActionDescriptor.RouteValues["action"]}");
     }
 }
 
