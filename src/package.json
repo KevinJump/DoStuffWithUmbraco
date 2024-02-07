@@ -1,11 +1,12 @@
 {
-    "name": "dostuff",
-    "private": "true",
-    "version": "0.0.0",
-    "type": "commonjs",
-    "description": "proxy package.json, so NPM Taskrunner extension in visual studio can find the commands",
-    "scripts": {
-        "build": "cd ./DoStuff.Client/Assets/ && npm run build",
-        "watch": "cd ./DoStuff.Client/Assets/ && npm run watch"
-    }
+  "name": "dostuff",
+  "private": "true",
+  "version": "0.0.0",
+  "type": "commonjs",
+  "description": "proxy package.json, so NPM Taskrunner extension in visual studio can find the commands",
+  "scripts": {
+    "build": "cd ./DoStuff.Client/Assets/ && npm run build",
+    "watch": "cd ./DoStuff.Client/Assets/ && npm run watch",
+    "generate": "cd ./DoStuff.Client/Assets/ && npm run generate"
+  }
 }

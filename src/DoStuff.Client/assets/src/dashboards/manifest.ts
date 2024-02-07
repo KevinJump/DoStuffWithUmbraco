@@ -1,5 +1,8 @@
 import type { ManifestDashboard } from "@umbraco-cms/backoffice/extension-registry";
 
+/**
+ * @description dashboard manifest, for a dashboard to appear in the content section
+ */
 const dashboards: Array<ManifestDashboard> = [
     {
         type: 'dashboard',

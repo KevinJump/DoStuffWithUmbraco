@@ -1,6 +1,12 @@
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 import { LitElement, html, css, customElement, property } from "@umbraco-cms/backoffice/external/lit";
 
+
+/**
+ * @export
+ * @method DoStuffDashboard
+ * @description Dashboard element
+ */
 @customElement('dostuff-dashboard')
 export class DoStuffDashboard extends UmbElementMixin(LitElement) {
 
