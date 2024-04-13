@@ -1,0 +1,15 @@
+{
+    "$schema": "../umbraco-package-schema.json",
+    "name": "DoStuff",
+    "id": "DoStuff",
+    "version": "0.1.0",
+    "allowTelemetry": true,
+    "extensions": [
+        {
+            "name": "DoStuff.entrypoint",
+            "alias": "DoStuff.EntryPoint",
+            "type": "entryPoint",
+            "js": "/app_plugins/DoStuff/assets.js"
+        }
+    ]
+}
