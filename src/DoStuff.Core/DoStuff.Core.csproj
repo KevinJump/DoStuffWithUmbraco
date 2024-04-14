@@ -10,4 +10,8 @@
 		<PackageReference Include="Umbraco.Cms.Api.Management" Version="14.0.0-beta003" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Data\Services\" />
+	</ItemGroup>
+
 </Project>
