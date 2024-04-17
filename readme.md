@@ -35,7 +35,9 @@ Quick examples of how to do things
 
 Some more involved concepts and code that need a bit more planning.
 
-- [ ] Repo / Service / Management Api Pattern
+- [x] Repo
+- [x] Service
+- [ ] Management Api Pattern
 
 # Project Structure
 
