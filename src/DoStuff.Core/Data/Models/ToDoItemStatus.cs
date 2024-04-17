@@ -3,9 +3,9 @@
 /// <summary>
 ///  status of a task.
 /// </summary>
-public enum ToDoItemStatus
+public enum ToDoItemStatus : int
 {
-	None,
+	None = 0,
 	Active,
 	Completed
 }

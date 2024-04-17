@@ -1,4 +1,5 @@
-﻿using DoStuff.Core.Data.Migrations;
+﻿using DoStuff.Core.Data;
+using DoStuff.Core.Data.Migrations;
 
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -49,8 +50,12 @@ public static class DoStuffBuilderExtensions
 {
 	public static IUmbracoBuilder AddDoStuffApp(this IUmbracoBuilder builder)
 	{
-		// add the migrations (this will create db tables, etc).
-		builder.AddDoStuffMigrations();
+		// data later.
+		builder.AddDoStuffDataLayer();
+
+		// service layer
+
+		// other things ?
 
 		return builder;
 	}
