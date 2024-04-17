@@ -35,8 +35,7 @@ Quick examples of how to do things
 
 Some more involved concepts and code that need a bit more planning.
 
-- [x] Repo
-- [x] Service
+- [x] [Repository / Serivce Patten](src/DoStuff.Core/Data)
 - [ ] Management Api Pattern
 
 # Project Structure
