@@ -26,7 +26,7 @@ public class DoStuffComposer : IComposer
 		// 
 		// UmbracoApplicationStarting and UmbracoApplicationStarted
 		// are the recommended locations to run code on startup. 
-		
+
 		// call the extension point (below) 
 		builder.AddDoStuffApp();
 	}
@@ -52,6 +52,6 @@ public static class DoStuffBuilderExtensions
 		// add the migrations (this will create db tables, etc).
 		builder.AddDoStuffMigrations();
 
-		return builder;	
+		return builder;
 	}
 }

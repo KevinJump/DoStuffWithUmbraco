@@ -5,7 +5,7 @@
 /// </summary>
 public enum ToDoItemStatus
 {
-    None,
-    Active,
-    Completed
+	None,
+	Active,
+	Completed
 }

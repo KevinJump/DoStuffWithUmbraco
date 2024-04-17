@@ -11,8 +11,8 @@ internal class ToDoListRepository : DoStuffRepositoryBase<ToDoList, ToDoListDTO>
 	public ToDoListRepository(
 		IScopeAccessor scopeAccessor,
 		IProfilingLogger profilingLogger,
-		IUmbracoMapper umbracoMapper) 
-		: base(scopeAccessor, profilingLogger, umbracoMapper, 
+		IUmbracoMapper umbracoMapper)
+		: base(scopeAccessor, profilingLogger, umbracoMapper,
 			DataConstants.ToDoListTableName)
 	{ }
 }

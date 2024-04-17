@@ -1,27 +1,27 @@
-WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
 builder.CreateUmbracoBuilder()
-    .AddBackOffice()
-    .AddWebsite()
-    .AddDeliveryApi()
-    .AddComposers()
-    .Build();
+	.AddBackOffice()
+	.AddWebsite()
+	.AddDeliveryApi()
+	.AddComposers()
+	.Build();
 
-WebApplication app = builder.Build();
+var app = builder.Build();
 
 await app.BootUmbracoAsync();
 
 
 app.UseUmbraco()
-    .WithMiddleware(u =>
-    {
-        u.UseBackOffice();
-        u.UseWebsite();
-    })
-    .WithEndpoints(u =>
-    {
-        u.UseBackOfficeEndpoints();
-        u.UseWebsiteEndpoints();
-    });
+	.WithMiddleware(u =>
+	{
+		u.UseBackOffice();
+		u.UseWebsite();
+	})
+	.WithEndpoints(u =>
+	{
+		u.UseBackOfficeEndpoints();
+		u.UseWebsiteEndpoints();
+	});
 
 await app.RunAsync();

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using DoStuff.Core.Data.Models;
+﻿using DoStuff.Core.Data.Models;
 using DoStuff.Core.Data.Persistence.Models;
 
 using Umbraco.Cms.Core.Logging;
@@ -18,8 +12,8 @@ internal class ToDoItemRepository : DoStuffRepositoryBase<ToDoItem, ToDoItemDTO>
 	public ToDoItemRepository(
 		IScopeAccessor scopeAccessor,
 		IProfilingLogger profilingLogger,
-		IUmbracoMapper umbracoMapper) 
-		: base(scopeAccessor, profilingLogger, umbracoMapper, 
+		IUmbracoMapper umbracoMapper)
+		: base(scopeAccessor, profilingLogger, umbracoMapper,
 			DataConstants.ToDoItemTableName)
 	{ }
 

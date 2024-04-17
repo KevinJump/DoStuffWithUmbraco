@@ -18,7 +18,7 @@ namespace DoStuff.Core.Data.Migrations.AddIndex;
 /// </remarks>
 internal class AddIndexToTableMigration : MigrationBase
 {
-	public AddIndexToTableMigration(IMigrationContext context) 
+	public AddIndexToTableMigration(IMigrationContext context)
 		: base(context)
 	{
 	}

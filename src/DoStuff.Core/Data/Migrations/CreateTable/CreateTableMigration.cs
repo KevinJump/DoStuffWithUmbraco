@@ -1,4 +1,5 @@
 ﻿using DoStuff.Core.Data.Persistence.Models;
+
 using Umbraco.Cms.Infrastructure.Migrations;
 
 namespace DoStuff.Core.Data.Migrations.CreateTable;

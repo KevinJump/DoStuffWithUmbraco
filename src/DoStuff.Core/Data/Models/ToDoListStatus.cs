@@ -2,7 +2,7 @@
 
 public enum ToDoListStatus
 {
-    Open,
-    Completed,
-    Closed
+	Open,
+	Completed,
+	Closed
 }

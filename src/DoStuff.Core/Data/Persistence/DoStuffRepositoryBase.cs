@@ -79,7 +79,7 @@ internal class DoStuffRepositoryBase<TModelDTO, TModel> : IDoStuffRepositoryBase
 	{
 		if (ids.Length == 0) return DoGetAll();
 
-		var uniqueIds = ids.Distinct().ToArray();
+		int[] uniqueIds = ids.Distinct().ToArray();
 
 		if (uniqueIds.Length <= _maxParams)
 			return DoGetAll(uniqueIds);

@@ -23,7 +23,7 @@ namespace DoStuff.Core.Data.Migrations;
 /// </remarks>
 internal class DoStuffMigrationPlan : MigrationPlan
 {
-	public DoStuffMigrationPlan() 
+	public DoStuffMigrationPlan()
 		: base("DoStuffWithUmbraco") // name of your application/plan.
 	{
 		From(string.Empty) // nothing, a clean install.
