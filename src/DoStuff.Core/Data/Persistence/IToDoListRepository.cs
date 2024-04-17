@@ -2,7 +2,7 @@
 
 namespace DoStuff.Core.Data.Persistence;
 
-internal interface IToDoListRepository : IDoStuffRepositoryBase<ToDoList>
+public interface IToDoListRepository : IDoStuffRepositoryBase<ToDoList>
 {
 	// methods for this repo.
 }

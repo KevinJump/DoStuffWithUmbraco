@@ -4,7 +4,7 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Infrastructure.Persistence;
 
 namespace DoStuff.Core.Data.Persistence;
-internal interface IDoStuffRepositoryBase<TModel> where TModel : class
+public interface IDoStuffRepositoryBase<TModel> where TModel : class
 {
 	int Count();
 	void Delete(int id);

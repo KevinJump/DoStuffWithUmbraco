@@ -1,4 +1,5 @@
-﻿using DoStuff.Core.Data;
+﻿using DoStuff.Core.Api;
+using DoStuff.Core.Data;
 using DoStuff.Core.Data.Migrations;
 
 using Umbraco.Cms.Core.Composing;
@@ -53,7 +54,8 @@ public static class DoStuffBuilderExtensions
 		// data later.
 		builder.AddDoStuffDataLayer();
 
-		// service layer
+		// API
+		builder.AddDoStuffApi();
 
 		// other things ?
 

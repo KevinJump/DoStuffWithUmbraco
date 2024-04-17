@@ -1,7 +1,7 @@
 ﻿using Umbraco.Cms.Core.Models;
 
 namespace DoStuff.Core.Data.Services;
-internal interface IDoStuffServiceBase<TModel> where TModel : class
+public interface IDoStuffServiceBase<TModel> where TModel : class
 {
 	int Count();
 	void Delete(int id);

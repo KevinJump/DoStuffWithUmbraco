@@ -2,7 +2,7 @@
 
 namespace DoStuff.Core.Data.Services;
 
-internal interface IToDoListService : IDoStuffServiceBase<ToDoList>
+public interface IToDoListService : IDoStuffServiceBase<ToDoList>
 {
 
 }
