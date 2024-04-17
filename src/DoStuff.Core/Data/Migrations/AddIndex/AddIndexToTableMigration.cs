@@ -26,7 +26,7 @@ internal class AddIndexToTableMigration : MigrationBase
 	protected override void Migrate()
 	{
 		// this migration only runs if the table exists 
-		if (TableExists(DataConstants.ToDoItemTableName) == false)
+		if (TableExists(DataConstants.ToDoItemTableName) is false)
 			return;
 
 		// if the index exsits we don't need to add it again. 

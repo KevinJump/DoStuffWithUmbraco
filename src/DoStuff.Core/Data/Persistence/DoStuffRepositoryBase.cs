@@ -69,7 +69,7 @@ internal class DoStuffRepositoryBase<TModelDTO, TModel> : IDoStuffRepositoryBase
 			.Where(GetBaseWhereClause(), new { Id = id });
 
 		var dto = Database.FirstOrDefault<TModelDTO>(sql);
-		if (dto == null) return default;
+		if (dto is null) return default;
 
 		// map. 
 		return umbracoMapper.Map<TModel>(dto);
@@ -159,7 +159,7 @@ internal class DoStuffRepositoryBase<TModelDTO, TModel> : IDoStuffRepositoryBase
 	public virtual TModel? Save(TModel model)
 	{
 		var dto = umbracoMapper.Map<TModelDTO>(model);
-		if (dto == null)
+		if (dto is null)
 			throw new InvalidCastException("Cannot convert to DTO model");
 
 		using (var transaction = Database.GetTransaction())
