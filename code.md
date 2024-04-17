@@ -48,7 +48,7 @@ if (SomethingCanBeDone()) {
 ```cs
 foreach(var item in listOfItems) {
 
-    if (IsItemEnabled() is false) return;
+    if (IsItemEnabled() is false) continue;
 
     // do work if item is enabled
 }
