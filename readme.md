@@ -22,7 +22,7 @@ Quick examples of how to do things
 
 ### Front end (Typescript)
 
-- [ ] Custom Section
+- [x] [Custom Section](src/DoStuff.Client/dostuff-assets/src/section/)
 - [ ] Dashboards
 - [ ] Menu Items
 - [ ] Workspaces
