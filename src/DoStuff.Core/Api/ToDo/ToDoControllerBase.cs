@@ -8,9 +8,8 @@ using Umbraco.Cms.Web.Common.Routing;
 namespace DoStuff.Core.Api.ToDo;
 
 [ApiController]
-[BackOfficeRoute("DoStuff/Api/v{version:apiVersion}/ToDo")]
 [Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]
-[MapToApi("ToDo")]
+[MapToApi(apiName: DoStuffApiConstants.ApiName)]
 public class ToDoControllerBase 
 {
 }

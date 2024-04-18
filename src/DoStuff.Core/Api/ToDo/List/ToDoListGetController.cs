@@ -13,6 +13,7 @@ namespace DoStuff.Core.Api.ToDo.List;
 /// <summary>
 ///  Get methods for a todo list. 
 /// </summary>
+[ApiVersion("1.0")]
 public class ToDoListGetController : ToDoListControllerBase
 {
 	public ToDoListGetController(IToDoListService listService)
@@ -43,4 +44,14 @@ public class ToDoListGetController : ToDoListControllerBase
 	public int Count() 
 		=> _listService.Count();
 
+	/// <summary>
+	///  Get any todo lists associated with an umbraco node
+	/// </summary>
+	/// <param name="nodeKey">Key value for the Umbraco node</param>
+	/// <returns>List of ToDoList items for the node</returns>
+	[HttpGet("GetByNode")]
+	[MapToApiVersion("1.0")]
+	[ProducesResponseType<IEnumerable<ToDoList>>(StatusCodes.Status200OK)]
+	public IEnumerable<ToDoList> GetByNode(Guid nodeKey)
+		=> _listService.GetByNode(nodeKey);
 }

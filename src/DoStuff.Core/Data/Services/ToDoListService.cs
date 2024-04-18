@@ -12,11 +12,22 @@ namespace DoStuff.Core.Data.Services;
 internal class ToDoListService : DoStuffServiceBase<ToDoList>,
 	IToDoListService
 {
+	private readonly IToDoListRepository _repository;
+
 	public ToDoListService(
 		IProfilingLogger logger,
 		IToDoListRepository baseRepository,
 		ICoreScopeProvider scopeProvider)
 		: base(logger, baseRepository, scopeProvider)
 	{
+		_repository = baseRepository;
+	}
+
+	public IEnumerable<ToDoList> GetByNode(Guid nodeKey)
+	{
+		using(var scope = _scopeProvider.CreateCoreScope(autoComplete: true))
+		{
+			return _repository.GetByNode(nodeKey);
+		}
 	}
 }

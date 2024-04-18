@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DoStuff.Core.Api.ToDo.List;
+
+[ApiVersion("1.0")]
 public class ToDoListSaveController : ToDoListControllerBase
 {
 	public ToDoListSaveController(IToDoListService listService) 

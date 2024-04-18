@@ -21,11 +21,11 @@ internal class DoStuffSwaggerGenOptions : IConfigureOptions<SwaggerGenOptions>
     public void Configure(SwaggerGenOptions options)
     {
         options.SwaggerDoc(
-            "DoStuff",
+			DoStuffApiConstants.ApiName,
             new OpenApiInfo
             {
                 Title = "DoStuff Management Api",
-                Version = "Latest",
+                Version = "1.0",
                 Description = "Examples of Management Api Controllers"
             });
 
