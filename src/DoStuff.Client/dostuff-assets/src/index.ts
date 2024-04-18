@@ -6,9 +6,21 @@ import { OpenAPI } from './api/index.ts';
 // load up the manifests here.
 import { manifests as dashboardManifests } from './dashboards/manifest.ts';
 import { manifests as sectionManifests } from './section/manifest.ts';
+import { manifests as documentWorkspaceManifests } from './documents/manifest.ts';
 
-const manifests: Array<ManifestTypes> = [...dashboardManifests, ...sectionManifests];
+const manifests: Array<ManifestTypes> = [
+	...dashboardManifests,
+	...sectionManifests,
+	...documentWorkspaceManifests,
+];
 
+/**
+ *
+ * @description umbraco's entry point into our code.
+ *
+ * @param _host
+ * @param extensionRegistry
+ */
 export const onInit: UmbEntryPointOnInit = (_host, extensionRegistry) => {
 	// register the here.
 	extensionRegistry.registerMany(manifests);
