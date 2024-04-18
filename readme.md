@@ -17,7 +17,7 @@ Quick examples of how to do things
 
 ### Server code (c#)
 
-- [ ] Migrations
+- [x] [Migrations](src/DoStuff.Core/Data/Migrations/)
 - [ ] Health Checks
 
 ### Front end (Typescript)
@@ -36,7 +36,7 @@ Quick examples of how to do things
 Some more involved concepts and code that need a bit more planning.
 
 - [x] [Repository / Serivce Patten](src/DoStuff.Core/Data)
-- [x] Management Api Pattern
+- [x] [Management Api Pattern](src/DoStuff.Core/Api/)
 
 # Project Structure
 

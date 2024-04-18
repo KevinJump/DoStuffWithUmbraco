@@ -14,7 +14,7 @@ namespace DoStuff.Core.Api.Configuration;
 ///  <code>
 ///   builder.services.AddSwaggerGen
 ///  </code>
-///  but this method seperates it out and makes it easier to manage.
+///  but this method separates it out and makes it easier to manage.
 /// </remarks>
 internal class DoStuffSwaggerGenOptions : IConfigureOptions<SwaggerGenOptions>
 {
