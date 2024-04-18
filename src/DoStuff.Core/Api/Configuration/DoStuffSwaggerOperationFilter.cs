@@ -27,7 +27,7 @@ internal class DoStuffSwaggerOperationFilter : IOperationFilter
         }
 
         // find the next free id for the method (e.g MyMethod2, MyMethod3, etc).
-        var operationIdBaseName = $"{controllerActionDescriptor.ControllerName}_{controllerActionDescriptor.ActionName}";
+        var operationIdBaseName = $"{controllerActionDescriptor.ActionName}";
         var operationId = operationIdBaseName;
         var suffix = 2;
         while (_operationIds.Values.Contains(operationId))

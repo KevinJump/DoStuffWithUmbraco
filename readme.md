@@ -31,6 +31,8 @@ Quick examples of how to do things
 - [ ] SignalR
 - [ ] Modals
 
+- [x] [API Code Generation](./src/DoStuff.Client/dostuff-assets/readme.md#auto-generate-api)
+
 ## Patterns
 
 Some more involved concepts and code that need a bit more planning.
@@ -42,6 +44,6 @@ Some more involved concepts and code that need a bit more planning.
 
 The project contains,
 
-- a client library (for front end)
-- a core library for back end (c#) code.
-- a site (so you can see how it works)
+- [A client library](./src/DoStuff.Client/) (for front end)
+- [A core library](./src/DoStuff.Core/) for back end (c#) code.
+- [A website](./src/DoStuff.Website/) (so you can see how it works)

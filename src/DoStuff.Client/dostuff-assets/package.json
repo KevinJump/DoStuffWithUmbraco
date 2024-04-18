@@ -3,17 +3,23 @@
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
+	"config": {
+		"server": "http://localhost:27678",
+		"swagger": "umbraco/swagger/DoStuffApi/swagger.json"
+	},
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
 		"watch": "vite build --watch",
-		"format": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\""
+		"format": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\"",
+		"generate": "openapi-ts --input %npm_package_config_server%/%npm_package_config_swagger% --output src/api --debug true --enums typescript --lint true --schemas false"
 	},
 	"dependencies": {
 		"lit": "^3.1.0"
 	},
 	"devDependencies": {
+		"@hey-api/openapi-ts": "^0.40.2",
 		"@umbraco-cms/backoffice": "^14.0.0-rc1",
 		"prettier": "3.2.5",
 		"typescript": "^5.2.2",
