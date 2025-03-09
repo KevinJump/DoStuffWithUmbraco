@@ -1,49 +1,66 @@
-# Do stuff with Umbraco 💪 ... Fourteen
+# Do Stuff with Umbraco 💪 - Fifteen.
 
-Ths is the latest version of the DoStuffWith Umbraco repository.
+This is the v15 edition of the DoStuffWithumbraco Repository
 
-Tips, patterns and code that will help you achive things with
-the latest (at time and of writing) and greatest (so far) version
-of Umbraco.
+Tips, Patterns, and code that will help you achive things with the Umbraco codebase.
 
 ## Where is X
 
-Things move, its a fact of life, but hopefully as we go we can
-point to places where things have changed
+If you are new to the webcomponents, typescript world of Umbraco v14 and beyond, quite a lot has changed on the client side.
 
 ## Snippets
 
-Quick examples of how to do things
+Quick examples of how to do things.
 
-### Server code (c#)
+### Server Code (C#)
 
-- [x] [Migrations](src/DoStuff.Core/Data/Migrations/)
+- [ ] Compositions (Dependency Injection)
+- [ ] Notifications / Handlers
+- [ ] Options (reading/using appsettings)
+- [ ] Migrations
 - [ ] Health Checks
+- [ ] WebHooks
+- [ ] Background Tasks
 
-### Front end (Typescript)
+### Front End (Typescript and Lit)
 
-- [x] [Custom Section](src/DoStuff.Client/dostuff-assets/src/section/)
+- [ ] Section
 - [ ] Dashboards
-- [ ] Menu Items
+- [ ] Actions (Menu Items)
 - [ ] Workspaces
 - [ ] Trees
-- [ ] Customer Property editor
-- [ ] SignalR
-- [ ] Modals
+- [ ] Property editors
+- [ ] SignlaR
+- [ ] Modal dialogs
+- [ ] Localization
+- [ ] Custom Icons
+- [ ] Conditions
+- [ ] Permissions
 
-- [x] [API Code Generation](./src/DoStuff.Client/dostuff-assets/readme.md#auto-generate-api)
+### Concepts
+
+Not always umbraco, but how some of the Lit/Web-Components/Typescript things fit together with umbraco development.
+
+- [ ] Manifest Filters (loading package from c#)
+- [ ] Components
+- [ ] Contexts
+- [ ] Repositories
+- [ ] Stores
 
 ## Patterns
 
-Some more involved concepts and code that need a bit more planning.
+Slighty more involved concepts and code that require a few diffrent things
 
-- [x] [Repository / Serivce Patten](src/DoStuff.Core/Data)
-- [x] [Management Api Pattern](src/DoStuff.Core/Api/)
+- [ ] Database Repository / Service Pattern
+- [ ] Management API/Swagger Pattern
 
 # Project Structure
 
-The project contains,
+This project is structured as if you are building something large with many
+moving parts, splitting the project helps you manage that, and swap bits in
+and out as versions of things change.
 
-- [A client library](./src/DoStuff.Client/) (for front end)
-- [A core library](./src/DoStuff.Core/) for back end (c#) code.
-- [A website](./src/DoStuff.Website/) (so you can see how it works)
+- **DoStuff.Client** - Client Library for the front end typescript/api
+- **DoStuff.Core** - Core backend stuff like databases, services, etc.
+- **DoStuff** - A Parent solution, so you include/publish this one.
+- **DoStuff.Website** - A website where everything runs / is included.

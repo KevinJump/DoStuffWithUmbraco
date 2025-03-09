@@ -1,10 +1,31 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
-
+<Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
     <StaticWebAssetBasePath>/</StaticWebAssetBasePath>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>DoStuff.Client</PackageId>
+    <Product>DoStuff.Client</Product>
+    <Title>DoStuff.Client</Title>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="*" />
+    <PackageReference Include="Umbraco.Cms.Web.Common" Version="*" />
+    <PackageReference Include="Umbraco.Cms.Api.Common" Version="*" />
+    <PackageReference Include="Umbraco.Cms.Api.Management" Version="*" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <!-- Dont include the client folder as part of packaging nuget build -->
+    <Content Remove="Client\**" />
+
+    <!-- However make the Umbraco-package.json included for dotnet pack or nuget package and visible to the solution -->
+    <None Include="Client\public\umbraco-package.json" Pack="false" />
+  </ItemGroup>
+  
 </Project>
