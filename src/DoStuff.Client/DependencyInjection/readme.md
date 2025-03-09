@@ -4,7 +4,7 @@
 
 For a traditional ASP.Net site you might add your services and components to the program.cs file and then your site would load them up.
 
-but for umbraco it is advisable not to change the program.cs file, and instead use the [Composer feature](https://docs.umbraco.com/umbraco-cms/reference/using-ioc) to load any required services,configuration or components during startup of a project.
+but for umbraco it is advisable not to change the program.cs file, and instead use the [Umbraco Composer feature](https://docs.umbraco.com/umbraco-cms/reference/using-ioc) to load any required services,configuration or components during startup of a project.
 
 > [!NOTE]
 > The Umbraco documentation suggests you might want to alter program.cs to add services, but in our experience you want to avoid this.
