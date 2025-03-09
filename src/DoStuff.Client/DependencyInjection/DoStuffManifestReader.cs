@@ -1,17 +1,21 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json.Nodes;
-using System.Threading.Tasks;
 
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Manifest;
 using Umbraco.Cms.Infrastructure.Manifest;
 
 namespace DoStuff.Client.DependencyInjection;
+
+/// <summary>
+///  Extension point so the manifest reader can be added to a composer. 
+/// </summary>
+/// <example>
+/// <code>
+///     builder.AddDoStuffManifestReader();
+/// </code>
+/// </example>
 internal static class DoStuffManifestReaderBuilderExtensions
 {
     public static IUmbracoBuilder AddDoStuffManifestReader(this IUmbracoBuilder builder)
@@ -21,6 +25,18 @@ internal static class DoStuffManifestReaderBuilderExtensions
     }
 }
 
+/// <summary>
+///  package manifest reader, adds the manifest for the package directly to the loaded 
+///  list of manifests (bypassing the need for an umbraco-package.json file.
+/// </summary>
+/// <remarks>
+///  the advantage of this method is that you can use the version of the compiled code 
+///  in the package, so you don't have to do any build steps to manually alter a json
+///  file. 
+///  
+///  you can also add the version as query parameter to the javascript file and this 
+///  helps break any caching issues that might occur when you update the package.
+/// </remarks>
 internal class DoStuffManifestReader : IPackageManifestReader
 {
     public Task<IEnumerable<PackageManifest>> ReadPackageManifestsAsync()
@@ -47,8 +63,3 @@ internal class DoStuffManifestReader : IPackageManifestReader
         return Task.FromResult(manifests.AsEnumerable());
     }
 }
-
-    
-
-
-

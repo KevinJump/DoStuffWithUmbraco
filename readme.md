@@ -43,7 +43,7 @@ Quick examples of how to do things.
 
 Not always umbraco, but how some of the Lit/Web-Components/Typescript things fit together with umbraco development.
 
-- [ ] Manifest Filters (loading package from c#)
+- [x] Manifest Filters (loading package from c#) [DoStuffManifestReader.cs](./src/DoStuff.Client/DependencyInjection/DoStuffManifestReader.cs)
 - [ ] Components
 - [ ] Contexts
 - [ ] Repositories
