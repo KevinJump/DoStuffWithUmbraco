@@ -1,22 +1,19 @@
-using Asp.Versioning;
+﻿using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Api.Management.OpenApi;
 using Umbraco.Cms.Api.Common.OpenApi;
 
 namespace DoStuff.Client.Composers
 {
-    public class DoStuffClientApiComposer : IComposer
-    {
-        public void Compose(IUmbracoBuilder builder)
-        {
+    public static class DoStuffClientApi { 
 
+        public static IUmbracoBuilder AddDoStuffClientApi(this IUmbracoBuilder builder) { 
             builder.Services.AddSingleton<IOperationIdHandler, CustomOperationHandler>();
 
             builder.Services.Configure<SwaggerGenOptions>(opt =>
@@ -46,6 +43,8 @@ namespace DoStuff.Client.Composers
                 // PR: https://github.com/umbraco/Umbraco-CMS/pull/15699
                 opt.OperationFilter<DoStuffClientOperationSecurityFilter>();
             });
+
+            return builder;
         }
 
         public class DoStuffClientOperationSecurityFilter : BackOfficeSecurityRequirementsOperationFilterBase
