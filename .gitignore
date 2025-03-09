@@ -483,3 +483,6 @@ umbraco-package-schema.json
 
 # Ignore template scripts
 /.template/
+
+# Ignore Generated client files
+/src/DoStuff.Client/wwwroot/
