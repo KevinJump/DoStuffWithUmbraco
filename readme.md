@@ -16,7 +16,7 @@ Quick examples of how to do things.
 
 ### Server Code (C#)
 
-- [ ] Compositions (Dependency Injection)
+- [x] [Compositions (Dependency Injection)](./src/DoStuff.Client/DependencyInjection/readme.md)
 - [ ] Notifications / Handlers
 - [ ] Options (reading/using appsettings)
 - [ ] Migrations
@@ -43,7 +43,7 @@ Quick examples of how to do things.
 
 Not always umbraco, but how some of the Lit/Web-Components/Typescript things fit together with umbraco development.
 
-- [x] Manifest Filters (loading package from c#) [DoStuffManifestReader.cs](./src/DoStuff.Client/DependencyInjection/DoStuffManifestReader.cs)
+- [x] Manifest Filters (loading package from c#) 📝[DoStuffManifestReader.cs](./src/DoStuff.Client/DependencyInjection/DoStuffManifestReader.cs)
 - [ ] Components
 - [ ] Contexts
 - [ ] Repositories
