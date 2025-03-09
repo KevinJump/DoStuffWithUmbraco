@@ -8,6 +8,8 @@ Tips, Patterns, and code that will help you achive things with the Umbraco codeb
 
 If you are new to the webcomponents, typescript world of Umbraco v14 and beyond, quite a lot has changed on the client side.
 
+- [Where is X](./where/index.md)
+
 ## Snippets
 
 Quick examples of how to do things.
