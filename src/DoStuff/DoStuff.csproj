@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DoStuff.Client\DoStuff.Client.csproj" />
+    <ProjectReference Include="..\DoStuff.Core\DoStuff.Core.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,9 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
+	<ItemGroup>
+		<PackageReference Include="Umbraco.Cms.Web.Website" Version="*" />
+		<PackageReference Include="Umbraco.Cms.Web.Common" Version="*" />
+		<PackageReference Include="Umbraco.Cms.Api.Common" Version="*" />
+		<PackageReference Include="Umbraco.Cms.Api.Management" Version="*" />
+	</ItemGroup>
 </Project>

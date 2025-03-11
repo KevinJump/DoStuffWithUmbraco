@@ -17,7 +17,7 @@ Quick examples of how to do things.
 ### Server Code (C#)
 
 - [x] [Compositions (Dependency Injection)](./src/DoStuff.Client/DependencyInjection/readme.md)
-- [ ] Notifications / Handlers
+- [x] [Notifications / Handlers](./src//DoStuff.Core/NotificationHandlers/readme.md)
 - [ ] Options (reading/using appsettings)
 - [ ] Migrations
 - [ ] Health Checks
