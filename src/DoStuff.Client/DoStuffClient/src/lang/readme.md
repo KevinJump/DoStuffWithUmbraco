@@ -1,4 +1,4 @@
-u# Localization (Client)
+# Localization (Client)
 
 You can localize your client UI by adding your own localization manifests for diffrent languages.
 
