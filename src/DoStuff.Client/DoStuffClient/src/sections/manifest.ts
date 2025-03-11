@@ -17,7 +17,7 @@ const doDtuffSection: UmbExtensionManifest = {
   alias: "do-stuff-section",
   name: "Do Stuff Section",
   meta: {
-    label: "Do Stuff",
+    label: "#dostuff_name",
     pathname: "do-stuff",
   },
 };

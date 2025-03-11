@@ -37,7 +37,7 @@ Quick examples of how to do things.
 - [ ] Property editors
 - [ ] SignlaR
 - [ ] Modal dialogs
-- [ ] Localization
+- [x] [Localization](./src/DoStuff.Client/DoStuffClient/src/lang/readme.md)
 - [ ] Custom Icons
 - [ ] Conditions
 - [ ] Permissions
