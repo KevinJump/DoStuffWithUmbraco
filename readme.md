@@ -2,6 +2,9 @@
 
 This is the v15 edition of the DoStuffWithumbraco Repository
 
+> [!NOTE]
+> This is a work in progress - see the checklists below as we flesh out the exmaples here.
+
 Tips, Patterns, and code that will help you achive things with the Umbraco codebase.
 
 ## Where is X
