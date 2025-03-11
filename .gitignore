@@ -485,4 +485,4 @@ umbraco-package-schema.json
 /.template/
 
 # Ignore Generated client files
-/src/DoStuff.Client/wwwroot/
+**/DoStuff.Client/wwwroot/
