@@ -29,7 +29,7 @@ Quick examples of how to do things.
 
 ### Front End (Typescript and Lit)
 
-- [ ] Section
+- [x] [Section](./src/DoStuff.Client/DoStuffClient/src/sections/manifest.ts)
 - [ ] Dashboards
 - [ ] Actions (Menu Items)
 - [ ] Workspaces
