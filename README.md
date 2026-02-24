@@ -71,3 +71,9 @@ and out as versions of things change.
 - **src/DoStuff.Core** - Core backend stuff like databases, services, etc.
 - **src/DoStuff** - A Parent solution, so you include/publish this one.
 - **demo/DoStuff.Website** - A website where everything runs / is included.
+
+## Time Dashboard.
+
+Most of the examples are delived though a "time dashboard" which is actually a workspace that allows you to see the time locally and on the server, and add additional timeszones.
+
+details of why we have done this can be seen in the [Time App Readme](./TIME-APP.md)

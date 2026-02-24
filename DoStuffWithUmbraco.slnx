@@ -2,6 +2,9 @@
   <Folder Name="/demo/">
     <Project Path="demo/DoStuff.Website/DoStuff.Website.csproj" />
   </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
   <Folder Name="/src/">
     <Project Path="src/DoStuff.Client/DoStuff.Client.csproj" />
     <Project Path="src/DoStuff.Core/DoStuff.Core.csproj" />
