@@ -45,6 +45,7 @@ so you can see it, and work out how it might work for you.
 - [ ] [Property Editors](./src/DoStuff.Client/DoStuff-Client/src/editors/)
 - [ ] Custom Conditions
 - [ ] Permissions
+- [x] [Localization](./src/DoStuff.Client/DoStuff-Client/src/lang/)
 
 ### Concepts
 
