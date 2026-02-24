@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Infrastructure.Manifest;
 
 namespace DoStuff.Client.Composers;
@@ -18,6 +19,8 @@ public class DoStuffClientApiComposer : IComposer
 
         // add the package manifest for the client, so we don't use umbraco-package.json file
         builder.Services.AddSingleton<IPackageManifestReader, DoStuffPackageManifestReader>();
+
+        builder.AddNotificationAsyncHandler<UmbracoApplicationStartedNotification, ApplicationStartedAddSectionHandler>();
     }
 }
 
