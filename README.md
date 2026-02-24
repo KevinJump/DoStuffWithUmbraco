@@ -46,6 +46,7 @@ so you can see it, and work out how it might work for you.
 - [ ] Custom Conditions
 - [ ] Permissions
 - [x] [Localization](./src/DoStuff.Client/DoStuff-Client/src/lang/)
+- [x] [Modal/Dialogs](./src/DoStuff.Client/DoStuff-Client/src/modals/)
 
 ### Concepts
 
