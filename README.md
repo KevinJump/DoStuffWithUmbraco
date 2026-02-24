@@ -21,7 +21,7 @@ so you can see it, and work out how it might work for you.
 ### Server Code (c#)
 
 - [x] [Compositions](./src/DoStuff.Core/Startup/)
-- [ ] Notifications
+- [x] [Notifications](./src/DoStuff.Core/Notifications/)
 - [ ] Options (reading/using settings)
 - [x] [Migrations (Database)](./src/DoStuff.Core/Data/Persistance/Migrations/)
 - [ ] Health Checks
