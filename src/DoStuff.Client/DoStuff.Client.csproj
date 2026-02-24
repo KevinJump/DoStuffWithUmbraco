@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<StaticWebAssetBasePath>/</StaticWebAssetBasePath>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>DoStuff.Client</PackageId>
+		<Product>DoStuff.Client</Product>
+		<Title>DoStuff.Client</Title>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Umbraco.Cms.Web.Website" Version="17.2" />
+		<PackageReference Include="Umbraco.Cms.Web.Common" Version="17.2" />
+		<PackageReference Include="Umbraco.Cms.Api.Common" Version="17.2" />
+		<PackageReference Include="Umbraco.Cms.Api.Management" Version="17.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- Dont include the client folder as part of packaging nuget build -->
+		<Content Remove="DoStuff-Client\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\DoStuff.Core\DoStuff.Core.csproj" />
+	</ItemGroup>
+</Project>
