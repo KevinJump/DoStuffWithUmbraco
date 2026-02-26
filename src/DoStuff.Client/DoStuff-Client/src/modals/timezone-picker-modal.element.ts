@@ -6,9 +6,9 @@ import {
 } from "@umbraco-cms/backoffice/external/lit";
 import { UmbModalBaseElement } from "@umbraco-cms/backoffice/modal";
 import { TimeZonePickerModalData, TimeZonePickerModalResult } from "./types";
-import { DOSTUFF_WORKSPACE_CONTEXT } from "../workspace/time-workspace.context";
 import { TimeZoneInfo, TimeZoneSetting } from "../api";
 import { UUITextStyles } from "@umbraco-cms/backoffice/external/uui";
+import { DOSTUFF_WORKSPACE_CONTEXT } from "../workspace/types";
 
 @customElement("do-stuff-timezone-picker-modal")
 export class DoStuffTimezonePickerModalElement extends UmbModalBaseElement<

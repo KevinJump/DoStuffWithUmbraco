@@ -7,10 +7,9 @@ import {
 } from "@umbraco-cms/backoffice/external/lit";
 import { UUITextStyles } from "@umbraco-cms/backoffice/external/uui";
 import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
-import DoStuffTimeWorkspaceContext, {
-  DOSTUFF_WORKSPACE_CONTEXT,
-} from "../time-workspace.context";
+import { DoStuffTimeWorkspaceContext } from "../time-workspace.context";
 import { TimeSettings, TimeZoneDisplayTime } from "../../api";
+import { DOSTUFF_WORKSPACE_CONTEXT } from "../types";
 
 @customElement("do-stuff-default-workspace-view-element")
 export class DoStuffDefaultWorkspaceViewElement extends UmbLitElement {

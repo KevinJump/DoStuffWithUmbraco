@@ -5,12 +5,11 @@ import {
   state,
 } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
-import DoStuffTimeWorkspaceContext, {
-  DOSTUFF_WORKSPACE_CONTEXT,
-} from "../time-workspace.context";
+import { DoStuffTimeWorkspaceContext } from "../time-workspace.context";
 import { TimeSettings } from "../../api";
 import { UUITextStyles } from "@umbraco-cms/backoffice/external/uui";
 import { UmbPropertyValueData } from "@umbraco-cms/backoffice/property";
+import { DOSTUFF_WORKSPACE_CONTEXT } from "../types";
 
 @customElement("do-stuff-settings-workspace-view-element")
 export class DoStuffSettingsWorkspaceViewElement extends UmbLitElement {
@@ -31,12 +30,6 @@ export class DoStuffSettingsWorkspaceViewElement extends UmbLitElement {
       });
     });
   }
-
-  // #onTimezoneChange(e: Event) {
-  //   const oldValue = this.data;
-  //   this.data = (e.target as UmbPropertyDatasetElement).value;
-  //   this.requestUpdate("data", oldValue);
-  // }
 
   @state()
   data: UmbPropertyValueData[] = [

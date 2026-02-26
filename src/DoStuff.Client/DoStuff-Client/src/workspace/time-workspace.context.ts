@@ -1,14 +1,10 @@
-import { UmbContextToken } from "@umbraco-cms/backoffice/context-api";
 import {
   UmbEditableWorkspaceContextBase,
   UmbSubmittableWorkspaceContext,
 } from "@umbraco-cms/backoffice/workspace";
 import { DOSTUFF_TIME_ITEM_ALIAS } from "../constants";
 import { UmbControllerHost } from "@umbraco-cms/backoffice/controller-api";
-import {
-  DOSTUFF_WORKSPACE_ALIAS,
-  DOSTUFF_WORKSPACE_CONTEXT_ALIAS,
-} from "./types";
+import { DOSTUFF_WORKSPACE_ALIAS, DOSTUFF_WORKSPACE_CONTEXT } from "./types";
 import { DoStuffTimeRepository } from "../repository/time-repository";
 import {
   UmbArrayState,
@@ -30,9 +26,9 @@ export class DoStuffTimeWorkspaceContext
     super(host, DOSTUFF_WORKSPACE_ALIAS);
 
     this.provideContext(DOSTUFF_WORKSPACE_CONTEXT, this);
-    // this.provideContext(UMB_WORKSPACE_CONTEXT, this);
-
     this.loadTimeSettings();
+
+    this.view.setTitle("Time");
   }
 
   #localTime = new UmbStringState(undefined);
@@ -50,7 +46,7 @@ export class DoStuffTimeWorkspaceContext
   readonly unique = this.#timeSettings.asObservablePart((data) => data?.key);
 
   getUnique(): string | null | undefined {
-    return undefined;
+    return "default";
   }
 
   getData(): TimeSettings | undefined {
@@ -107,9 +103,4 @@ export class DoStuffTimeWorkspaceContext
   }
 }
 
-export default DoStuffTimeWorkspaceContext;
-
-export const DOSTUFF_WORKSPACE_CONTEXT =
-  new UmbContextToken<DoStuffTimeWorkspaceContext>(
-    DOSTUFF_WORKSPACE_CONTEXT_ALIAS,
-  );
+export { DoStuffTimeWorkspaceContext as api };
